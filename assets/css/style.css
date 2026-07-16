@@ -1115,6 +1115,15 @@ img { max-width: 100%; height: auto; display: block; }
   background: rgba(139, 125, 114, 0.1);
 }
 
+.social-links a[aria-label="WhatsApp"] { color: #25D366; }
+.social-links a[aria-label="WhatsApp"]:hover { border-color: #25D366; background: rgba(37,211,102,0.1); }
+
+.social-links a[aria-label="Facebook"] { color: #1877F2; }
+.social-links a[aria-label="Facebook"]:hover { border-color: #1877F2; background: rgba(24,119,242,0.1); }
+
+.social-links a[aria-label="Instagram"] { color: #E4405F; }
+.social-links a[aria-label="Instagram"]:hover { border-color: #E4405F; background: rgba(228,64,95,0.1); }
+
 .social-links a svg {
   width: 18px;
   height: 18px;
