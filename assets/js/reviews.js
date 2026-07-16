@@ -1,15 +1,3 @@
-/**
- * Google Reviews fetcher per Tocco Magico Coiffure
- *
- * PER ATTIVARE:
- * 1. Vai su https://console.cloud.google.com
- * 2. Crea un progetto (o usa uno esistente)
- * 3. Abilita "Places API" nelle API & Servizi
- * 4. Crea una chiave API in "Credenziali"
- * 5. Trova il Place ID su https://developers.google.com/maps/documentation/places/web-service/place-id
- *    (cerca "Tocco Magico Coiffure Bellinzona")
- * 6. Inseriscili qui sotto
- */
 const GOOGLE_API_KEY = 'INSERISCI_LA_TUA_API_KEY';
 const PLACE_ID = 'INSERISCI_IL_PLACE_ID';
 
