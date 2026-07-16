@@ -934,6 +934,26 @@ img { max-width: 100%; height: auto; display: block; }
   color: #25D366;
 }
 
+.social-pill-fb {
+  color: #1877F2;
+  border-color: rgba(24,119,242,0.2);
+}
+.social-pill-fb:hover {
+  background: rgba(24,119,242,0.1);
+  border-color: #1877F2;
+  color: #1877F2;
+}
+
+.social-pill-ig {
+  color: #E4405F;
+  border-color: rgba(228,64,95,0.2);
+}
+.social-pill-ig:hover {
+  background: rgba(228,64,95,0.1);
+  border-color: #E4405F;
+  color: #E4405F;
+}
+
 /* ── LOGO ── */
 .contact-logo {
   max-width: 900px;
