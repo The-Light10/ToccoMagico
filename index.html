@@ -390,5 +390,21 @@
   <script src="assets/js/lang.js"></script>
   <script src="assets/js/script.js"></script>
   <script src="assets/js/reviews.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var today = new Date().getDay();
+      document.querySelectorAll('.hours-row[data-day]').forEach(function(row) {
+        if (row.getAttribute('data-day') == today) row.classList.add('today');
+      });
+      document.querySelectorAll('.faq-question').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var item = this.closest('.faq-item');
+          var isOpen = item.classList.contains('open');
+          document.querySelectorAll('.faq-item.open').forEach(function(i) { i.classList.remove('open'); });
+          if (!isOpen) item.classList.add('open');
+        });
+      });
+    });
+  </script>
 </body>
 </html>
