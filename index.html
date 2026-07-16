@@ -1,394 +1,572 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tocco Magico Coiffure — Coiffure a Bellinzona</title>
-  <meta name="description" content="Tocco Magico Coiffure a Bellinzona: taglio, colore, trattamenti, acconciature matrimonio e manicure gel.">
-  <link rel="icon" type="image/png" sizes="32x32" href="IMG/favicon-32.png">
-  <link rel="icon" type="image/png" href="IMG/favicon.png">
-  <link rel="apple-touch-icon" href="IMG/favicon.png">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <style>
-    .lang-selector { display:flex; gap:4px; align-items:center; }
-    .lang-btn { background:none; border:1px solid rgba(255,255,255,0.1); color:var(--beige-dark); padding:4px 10px; border-radius:50px; cursor:pointer; font-size:0.72rem; transition:0.3s; letter-spacing:0.5px; }
-    .lang-btn:hover { border-color:var(--primary); color:var(--primary); }
-    .lang-btn.active { border-color:var(--primary); color:var(--primary); background:rgba(162,144,98,0.1); }
-    .nav-links .lang-selector { margin-left:12px; }
-    @media(max-width:768px) {
-      .nav-links .lang-selector { margin-left:0; margin-top:12px; justify-content:flex-start; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tocco Magico — Galleria Foto</title>
+<meta name="description" content="Galleria fotografica di Tocco Magico Coiffure a Bellinzona. Scopri i nostri lavori, tagli, colori e acconciature.">
+<link rel="icon" type="image/png" sizes="32x32" href="IMG/favicon-32.png">
+<link rel="icon" type="image/png" href="IMG/favicon.png">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap');
+
+  :root {
+    --primary: #c9a96e;
+    --primary-light: #e2b27f;
+    --bg-dark: #0a0a0a;
+    --text-light: #f0ece2;
+    --text-muted: #a89b8c;
+    --card-bg: rgba(10,10,10,0.85);
+    --border-gold: rgba(201,169,110,0.2);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg-dark);
+    color: var(--text-light);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+
+  a { color: var(--primary); text-decoration: none; }
+  a:hover { color: var(--primary-light); }
+
+  /* ── SFONDO ANIMATO CONTINUO ── */
+  .bg-scroll {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 0;
+    overflow: hidden;
+    opacity: 0.22;
+  }
+
+  .bg-scroll .col {
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .bg-scroll .col .scroll-track {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    animation: cascadeDown linear infinite;
+  }
+
+  .bg-scroll .col .scroll-track img {
+    width: 100%;
+    border-radius: 6px;
+    display: block;
+  }
+
+  @keyframes cascadeDown {
+    0%   { transform: translateY(0); }
+    100% { transform: translateY(-50%); }
+  }
+
+  /* ── HEADER ── */
+  header {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 80px 20px 60px;
+    background: linear-gradient(180deg, rgba(10,10,10,0.97) 0%, rgba(10,10,10,0.6) 70%, transparent 100%);
+  }
+
+  .back-link {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--text-muted);
+    transition: color 0.3s ease;
+    z-index: 20;
+  }
+
+  .back-link:hover { color: var(--primary-light); }
+
+  .back-link svg {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.3s ease;
+  }
+
+  .back-link:hover svg { transform: translateX(-3px); }
+
+  header .logo-sm {
+    width: 60px;
+    margin-bottom: 16px;
+    opacity: 0.8;
+  }
+
+  header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.6rem;
+    letter-spacing: 3px;
+    background: linear-gradient(135deg, var(--primary-light), #f5deb3, var(--primary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 12px;
+  }
+
+  header p {
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    letter-spacing: 5px;
+    text-transform: uppercase;
+  }
+
+  /* ── SEZIONE FEATURED ── */
+  .featured {
+    position: relative;
+    z-index: 10;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px 20px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 48px;
+    text-align: center;
+    letter-spacing: 3px;
+  }
+
+  .section-divider {
+    display: block;
+    width: 60px;
+    height: 1px;
+    background: var(--primary);
+    margin: 0 auto 16px;
+    opacity: 0.5;
+  }
+
+  .section-subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    font-weight: 300;
+    margin-top: -36px;
+    margin-bottom: 48px;
+  }
+
+  .card {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 64px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-gold);
+    border-radius: 16px;
+    padding: 28px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(201,169,110,0.1);
+  }
+
+  .card:nth-child(even) { flex-direction: row-reverse; }
+
+  .card img {
+    width: 220px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+    flex-shrink: 0;
+  }
+
+  .card-text h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--primary-light);
+    margin-bottom: 12px;
+  }
+
+  .card-text p {
+    font-weight: 300;
+    line-height: 1.8;
+    color: #bfb5a5;
+    font-size: 0.95rem;
+  }
+
+  /* ── SEPARATORI TRA LE CARD ── */
+  .card-separator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin: 8px 0 56px;
+    opacity: 0.4;
+  }
+
+  .card-separator .sep-line {
+    flex: 1;
+    max-width: 120px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--primary), transparent);
+  }
+
+  .card-separator .sep-icon {
+    color: var(--primary);
+    font-size: 0.7rem;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .card-separator .sep-diamond {
+    width: 6px;
+    height: 6px;
+    background: var(--primary);
+    transform: rotate(45deg);
+    flex-shrink: 0;
+  }
+
+  /* ── SEZIONE GRIGLIA ── */
+  .grid-section {
+    position: relative;
+    z-index: 10;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px 60px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 14px;
+  }
+
+  .grid img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: saturate(0.8);
+  }
+
+  .grid img:hover {
+    transform: scale(1.03);
+    filter: saturate(1.1);
+  }
+
+  /* ── LIGHTBOX ── */
+  .lightbox {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.92);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .lightbox.active { display: flex; }
+
+  .lightbox img {
+    max-width: 90%;
+    max-height: 90vh;
+    border-radius: 8px;
+    box-shadow: 0 0 60px rgba(0,0,0,0.5);
+  }
+
+  .lightbox-close {
+    position: absolute;
+    top: 24px;
+    right: 32px;
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-size: 2.4rem;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.3s ease;
+  }
+
+  .lightbox-close:hover { color: var(--primary); }
+
+  /* ── FOOTER ── */
+  footer {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 48px 20px 32px;
+    border-top: 1px solid rgba(201,169,110,0.12);
+    background: rgba(10,10,10,0.9);
+  }
+
+  footer p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    opacity: 0.7;
+    margin-bottom: 8px;
+  }
+
+  footer .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin: 16px 0;
+    flex-wrap: wrap;
+  }
+
+  footer .footer-links a {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    transition: color 0.3s ease;
+  }
+
+  footer .footer-links a:hover { color: var(--primary-light); }
+
+  footer .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  footer .social-links a {
+    color: var(--text-muted);
+    transition: color 0.3s ease;
+  }
+
+  footer .social-links a:hover { color: var(--primary); }
+
+  /* ── LANG SELECTOR ── */
+  .lang-selector { display:flex; gap:4px; align-items:center; justify-content:center; margin-top:20px; }
+  .lang-btn {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    padding: 5px 10px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .lang-btn:hover { border-color: var(--primary); color: var(--primary); }
+  .lang-btn.active { background: rgba(201,169,110,0.15); border-color: var(--primary); color: var(--primary); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    header h1 { font-size: 2.2rem; }
+    header { padding: 100px 20px 40px; }
+    .card { flex-direction: column !important; padding: 16px; gap: 20px; }
+    .card img { width: 100%; height: 180px; }
+    .back-link { top: 16px; left: 16px; }
+  }
+</style>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header class="header" id="header">
-    <div class="container">
-      <nav class="nav">
-        <ul class="nav-links">
-          <li><a href="#about" data-i18n="nav_about">Chi siamo</a></li>
-          <li><a href="#services" data-i18n="nav_services">Servizi</a></li>
-          <li><a href="#gallery" data-i18n="nav_gallery">Galleria</a></li>
-          <li><a href="#contact" data-i18n="nav_contact">Contatti</a></li>
-        </ul>
-        <button class="menu-toggle" aria-label="Menu">
-          <span></span><span></span><span></span>
-        </button>
-      </nav>
+<!-- SFONDO ANIMATO -->
+<div class="bg-scroll" id="bgScroll"></div>
+
+<!-- HEADER -->
+<header>
+  <a href="index.html#gallery" class="back-link">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5"/><polyline points="12 19 5 12 12 5"/></svg>
+    <span data-i18n="gallery_back">Torna al sito</span>
+  </a>
+  <img src="IMG/logo-gold.png" alt="Tocco Magico" class="logo-sm">
+  <h1 data-i18n="gallery_page_title">Galleria Foto</h1>
+  <span class="section-divider"></span>
+  <p data-i18n="gallery_subtitle">Tocco Magico Coiffure</p>
+</header>
+
+<!-- FOTO IN EVIDENZA -->
+<section class="featured">
+  <h2 class="section-title" data-i18n="gallery_featured_title">In Evidenza</h2>
+  <p class="section-subtitle" data-i18n="gallery_featured_desc">Una selezione delle nostre immagini preferite</p>
+
+  <div class="card">
+    <img src="IMG/tramonto-01.jpg" alt="Tramonto dorato">
+    <div class="card-text">
+      <h3 data-i18n="gallery_card1_title">Tramonto Dorato</h3>
+      <p data-i18n="gallery_card1_desc">Il cielo si accende di arancione e oro mentre il sole scende oltre l'orizzonte.
+         Un momento di pace assoluta, dove il tempo sembra fermarsi e il mondo
+         diventa un dipinto vivente.</p>
     </div>
-  </header>
-
-  <!-- HERO -->
-  <section class="hero" id="hero">
-    <div class="container">
-      <div class="hero-content">
-        <div class="hero-layout">
-          <img src="IMG/logo-gold.png" alt="Tocco Magico Coiffure" class="hero-logo">
-          <div class="hero-text">
-            <div class="hero-badge" data-i18n="hero_badge">Coiffure a Bellinzona</div>
-            <h1><span data-i18n="hero_title_1">Il tuo stile,</span><br><span data-i18n="hero_title_2">il nostro </span><span data-i18n="hero_title_3" style="color:var(--primary);">tocco magico</span></h1>
-            <p data-i18n="hero_desc">Da anni trasformiamo capelli in opere d'arte. Taglio, colore, trattamenti e molto più in un'atmosfera accogliente e professionale.</p>
-            <div class="hero-actions">
-              <a href="tel:+41918251918" class="btn btn-primary">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                +41 91 825 19 18
-              </a>
-              <a href="tel:+41918251904" class="btn btn-outline">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                +41 91 825 19 04
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="scroll-indicator">
-      <span data-i18n="hero_cta">Scopri di più</span>
-      <div class="scroll-line"></div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="section" id="about">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-image reveal">
-          <img src="https://dynl.mktgcdn.com/p/FhHhtbMGb0-uVaI-qkRZek_qgnRWczvoHkglqqKq4IE/319x398" alt="Tocco Magico Coiffure salone" loading="lazy">
-        </div>
-        <div class="about-text">
-          <div class="section-label" data-i18n="about_label">Chi siamo</div>
-          <h2 class="section-title reveal" data-i18n="about_title">Dove l'arte incontra<br>la professionalità</h2>
-          <p class="section-sub reveal" data-i18n="about_desc">Sei alla ricerca di un salone di Coiffure a Bellinzona che unisca professionalità, stile e attenzione ai dettagli?</p>
-          <div class="rating reveal">
-            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-            <span class="rating-value" id="rating-value">4.9</span>
-            <span class="rating-count" id="rating-count">(11 recensioni)</span>
-            <a href="https://search.google.com/local/writereview?placeid=INSERISCI_IL_PLACE_ID" target="_blank" rel="noopener" style="margin-left:8px;font-size:0.75rem;color:var(--primary);opacity:0.7;" data-i18n="about_reviews">Scrivi una recensione</a>
-          </div>
-          <div class="status-badge" id="status-badge">
-            <span class="dot"></span> <span id="status-text" data-i18n="about_loading">Caricamento...</span>
-          </div>
-          <div class="about-features">
-            <div class="about-feature reveal">
-              <h4 data-i18n="feature1_title">Taglio su misura</h4>
-              <p data-i18n="feature1_desc">Ogni taglio è pensato per valorizzare la tua unicità e personalità.</p>
-            </div>
-            <div class="about-feature reveal">
-              <h4 data-i18n="feature2_title">Colore creativo</h4>
-              <p data-i18n="feature2_desc">Dai naturali ai più audaci, il tuo colore ideale ti aspetta.</p>
-            </div>
-            <div class="about-feature reveal">
-              <h4 data-i18n="feature3_title">Matrimoni & eventi</h4>
-              <p data-i18n="feature3_desc">Acconciature e make-up per rendere il tuo giorno indimenticabile.</p>
-            </div>
-            <div class="about-feature reveal">
-              <h4 data-i18n="feature4_title">Nails</h4>
-              <p data-i18n="feature4_desc">Unghie eleganti e resistenti con gel semipermanente.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section class="section services" id="services">
-    <div class="container">
-      <div class="services-header reveal">
-        <div class="section-label" data-i18n="services_label">I nostri servizi</div>
-        <h2 class="section-title" data-i18n="services_title">Il tuo stile, la nostra passione</h2>
-        <p class="section-sub" data-i18n="services_desc">Taglio, colore, trattamenti, extensions, styling e nails — scopri tutti i nostri servizi e prezzi.</p>
-      </div>
-      <div class="services-grid">
-        <div class="service-card reveal">
-          <h3 data-i18n="service1_title">Taglio & Styling</h3>
-          <p data-i18n="service1_desc">Piega, pettinata, raccolti, piastra e babyliss.</p>
-          <span class="price"><a href="listing/listino.html" data-i18n="view_price">Vedi listino →</a></span>
-        </div>
-        <div class="service-card reveal">
-          <h3 data-i18n="service2_title">Colore & Mèches</h3>
-          <p data-i18n="service2_desc">Colorazione classica, tonalizzante, mèches, balayage e ritocchi.</p>
-          <span class="price"><a href="listing/listino.html" data-i18n="view_price">Vedi listino →</a></span>
-        </div>
-        <div class="service-card reveal">
-          <h3 data-i18n="service3_title">Trattamenti</h3>
-          <p data-i18n="service3_desc">Decolorazioni, stiratura classica e keratina, permanente e prodotti Keune.</p>
-          <span class="price"><a href="listing/listino.html" data-i18n="view_price">Vedi listino →</a></span>
-        </div>
-        <div class="service-card reveal">
-          <h3 data-i18n="service4_title">Extensions & Parrucche</h3>
-          <p data-i18n="service4_desc">Ciocchette, fasce e parrucche per un look da sogno.</p>
-          <span class="price"><a href="listing/listino.html" data-i18n="view_price">Vedi listino →</a></span>
-        </div>
-        <div class="service-card reveal">
-          <h3 data-i18n="service5_title">Uomo & Bambino</h3>
-          <p data-i18n="service5_desc">Taglio uomo, macchinetta, torni e taglio bambini/studenti.</p>
-          <span class="price"><a href="listing/listino.html" data-i18n="view_price">Vedi listino →</a></span>
-        </div>
-        <div class="service-card reveal">
-          <h3 data-i18n="service6_title">Nails</h3>
-          <p data-i18n="service6_desc">Manicure, semipermanente, refill, ricostruzione, pedicure e nail art.</p>
-          <span class="price"><a href="listing/listino.html" data-i18n="view_price">Vedi listino →</a></span>
-        </div>
-      </div>
-      <div style="text-align:center;margin-top:48px;" class="reveal">
-        <a href="listing/listino.html" class="btn btn-primary" data-i18n="view_full_price">Scopri il listino completo</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- GALLERY -->
-  <section class="section" id="gallery">
-    <div class="container">
-      <div class="services-header reveal">
-        <div class="section-label" data-i18n="gallery_label">Galleria</div>
-        <h2 class="section-title" data-i18n="gallery_title">I nostri lavori</h2>
-        <p class="section-sub" data-i18n="gallery_desc">Scopri alcuni dei nostri tagli, colori e acconciature.</p>
-      </div>
-    </div>
-    <div class="gallery-grid reveal">
-      <div class="gallery-item">
-        <img src="https://dynl.mktgcdn.com/p/FhHhtbMGb0-uVaI-qkRZek_qgnRWczvoHkglqqKq4IE/319x398" alt="Lavoro Tocco Magico" loading="lazy">
-        <div class="gallery-overlay"><span data-i18n="gallery_view">Vedi</span></div>
-      </div>
-      <div class="gallery-item">
-        <img src="https://dynl.mktgcdn.com/p/4TZwJCbxFZ0qA1I7cMRZ8Tw2Z-pxts2nR5E-XzLLUUE/319x398" alt="Lavoro Tocco Magico" loading="lazy">
-        <div class="gallery-overlay"><span data-i18n="gallery_view">Vedi</span></div>
-      </div>
-      <div class="gallery-item">
-        <img src="https://dynl.mktgcdn.com/p/w5ENc8GAFLVdrybR_fSNjZErNFAuyawOXEDO6qcEbIg/319x398" alt="Lavoro Tocco Magico" loading="lazy">
-        <div class="gallery-overlay"><span data-i18n="gallery_view">Vedi</span></div>
-      </div>
-      <div class="gallery-item">
-        <img src="https://dynl.mktgcdn.com/p/6UC7vVUQbmmdZF2CjWs6V4t_3s6GYu_rydhJOqB67To/319x398" alt="Lavoro Tocco Magico" loading="lazy">
-        <div class="gallery-overlay"><span data-i18n="gallery_view">Vedi</span></div>
-      </div>
-      <div class="gallery-item">
-        <img src="https://dynl.mktgcdn.com/p/4D4pxnuZqrVSds1Gk0_4CukVOzRra25wMnx5yalaW6A/319x398" alt="Lavoro Tocco Magico" loading="lazy">
-        <div class="gallery-overlay"><span data-i18n="gallery_view">Vedi</span></div>
-      </div>
-      <div class="gallery-item">
-        <img src="https://dynl.mktgcdn.com/p/5WipnbqepuqNqTnZLGFgwyig-pY-iYlsQey7joVyKLI/319x398" alt="Lavoro Tocco Magico" loading="lazy">
-        <div class="gallery-overlay"><span data-i18n="gallery_view">Vedi</span></div>
-      </div>
-      <div class="gallery-item">
-        <img src="https://dynl.mktgcdn.com/p/6BA_gLi19OKudLqDduOBujXtLmHcENSmFAAsigG9oLE/319x398" alt="Lavoro Tocco Magico" loading="lazy">
-        <div class="gallery-overlay"><span data-i18n="gallery_view">Vedi</span></div>
-      </div>
-      <div class="gallery-item">
-        <img src="https://dynl.mktgcdn.com/p/1bpkdj7XC5WW0QPNBIePoJnkQEjJDm9asFqRa3nDX-Y/319x398" alt="Lavoro Tocco Magico" loading="lazy">
-        <div class="gallery-overlay"><span data-i18n="gallery_view">Vedi</span></div>
-      </div>
-      <div class="gallery-item">
-        <img src="https://dynl.mktgcdn.com/p/FhHhtbMGb0-uVaI-qkRZek_qgnRWczvoHkglqqKq4IE/319x398" alt="Lavoro Tocco Magico" loading="lazy">
-        <div class="gallery-overlay"><span data-i18n="gallery_view">Vedi</span></div>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:40px;" class="reveal">
-      <a href="galleria.html" class="btn btn-primary" data-i18n="gallery_all">Scopri tutta la galleria →</a>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="section contact" id="contact">
-    <div class="container">
-
-      <div class="contact-hero reveal">
-        <div class="section-label" data-i18n="contact_label">Contatti</div>
-        <h2 class="section-title contact-title" data-i18n="contact_hero_title">Prenota il tuo appuntamento</h2>
-        <p class="section-sub contact-sub" data-i18n="contact_hero_desc">Siamo qui per te. Scrivici, chiamaci o passa a trovarci — il tuo nuovo look ti aspetta.</p>
-      </div>
-
-      <div class="contact-actions reveal">
-        <a href="https://wa.me/41918251918" target="_blank" rel="noopener" class="cta-whatsapp">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-          <span data-i18n="contact_wa">Scrivici su WhatsApp</span>
-        </a>
-        <a href="tel:+41918251918" class="cta-phone">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          +41 91 825 19 18
-        </a>
-      </div>
-
-      <div class="contact-cards reveal">
-        <div class="contact-card">
-          <div class="contact-card-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          </div>
-          <h4 data-i18n="contact_address">Indirizzo</h4>
-          <p>Via Camminata 6<br>6500 Bellinzona</p>
-        </div>
-        <div class="contact-card">
-          <div class="contact-card-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          </div>
-          <h4 data-i18n="contact_phone">Telefono</h4>
-          <p><a href="tel:+41918251918">+41 91 825 19 18</a></p>
-          <p><a href="tel:+41918251904">+41 91 825 19 04</a></p>
-        </div>
-        <div class="contact-card">
-          <div class="contact-card-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          </div>
-          <h4 data-i18n="contact_languages">Lingue</h4>
-          <p data-i18n="contact_languages_list">Italiano, Francese, Tedesco, Inglese, Serbo-croato</p>
-        </div>
-      </div>
-
-      <div class="contact-bottom reveal">
-        <div class="contact-hours-card">
-          <div class="hours-header">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            <h3 data-i18n="contact_hours">Orari di apertura</h3>
-          </div>
-          <div class="hours-grid">
-            <div class="hours-row" data-day="1"><span data-i18n="day_mon">Lunedì</span><span>08:30 – 18:00</span></div>
-            <div class="hours-row" data-day="2"><span data-i18n="day_tue">Martedì</span><span>08:30 – 18:30</span></div>
-            <div class="hours-row" data-day="3"><span data-i18n="day_wed">Mercoledì</span><span>08:30 – 18:30</span></div>
-            <div class="hours-row" data-day="4"><span data-i18n="day_thu">Giovedì</span><span>08:30 – 18:30</span></div>
-            <div class="hours-row" data-day="5"><span data-i18n="day_fri">Venerdì</span><span>08:30 – 18:30</span></div>
-            <div class="hours-row" data-day="6"><span data-i18n="day_sat">Sabato</span><span>08:30 – 16:00</span></div>
-            <div class="hours-row closed-row" data-day="0"><span data-i18n="day_sun">Domenica</span><span class="closed" data-i18n="closed">Chiuso</span></div>
-          </div>
-          <div class="hours-note">
-            <span class="hours-note-icon">✦</span>
-            <span data-i18n="thu_evening">Giovedì sera</span> · <span data-i18n="thu_evening_time">18:30 – 20:30 (solo su appuntamento)</span>
-          </div>
-        </div>
-
-        <div class="contact-why-card">
-          <div class="why-header">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <h3 data-i18n="contact_why_title">Perché scegliere noi</h3>
-          </div>
-          <ul class="why-list">
-            <li>
-              <span class="why-check">✦</span>
-              <span data-i18n="contact_why1">Consulenza personalizzata</span>
-            </li>
-            <li>
-              <span class="why-check">✦</span>
-              <span data-i18n="contact_why2">Ambiente professionale e accogliente</span>
-            </li>
-            <li>
-              <span class="why-check">✦</span>
-              <span data-i18n="contact_why3">Prodotti di alta qualità</span>
-            </li>
-            <li>
-              <span class="why-check">✦</span>
-              <span data-i18n="contact_why4">Massima attenzione ai dettagli</span>
-            </li>
-          </ul>
-          <div class="social-row">
-            <a href="https://www.facebook.com/toccomagicocoiffure" target="_blank" rel="noopener" class="social-pill">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-              Facebook
-            </a>
-            <a href="https://www.instagram.com/toccomagicocoiffure" target="_blank" rel="noopener" class="social-pill">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
-              Instagram
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="contact-photo reveal">
-        <img src="IMG/tm.jpg" alt="Tocco Magico Coiffure — interno salone" loading="lazy">
-      </div>
-
-      <div class="faq-section reveal">
-        <h3 class="faq-title">Domande frequenti</h3>
-        <div class="faq-list">
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span>È necessaria la prenotazione?</span>
-              <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-            </button>
-            <div class="faq-answer">
-              <p>La prenotazione è consigliata per garantirti il posto preferito, soprattutto nei giorni di maggior affluenza. Puoi prenotare facilmente tramite WhatsApp o telefonando direttamente al salone.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span>Quanto dura un appuntamento?</span>
-              <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-            </button>
-            <div class="faq-answer">
-              <p>La durata varia in base al servizio: un taglio dura circa 30-45 minuti, una colorazione da 60 a 120 minuti, e un trattamento specifico può richiedere fino a 3 ore. Ti daremo sempre una stima precisa al momento della prenotazione.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span>Quali metodi di pagamento accettate?</span>
-              <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-            </button>
-            <div class="faq-answer">
-              <p>Accettiamo contanti, TWINT, carte Visa, Mastercard, Maestro, American Express e pagamenti contactless.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="notice-subtle reveal">
-        <p data-i18n="notice">In caso di mancata disdetta con almeno 24h di anticipo, verrà addebitato il 50% del costo del servizio. Reclami entro 48 ore.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <p>Via Camminata 6, 6500 Bellinzona — +41 91 825 19 18 — +41 91 825 19 04</p>
-      <div class="social-links">
-        <a href="https://www.facebook.com/toccomagicocoiffure" target="_blank" rel="noopener" aria-label="Facebook">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-        </a>
-        <a href="https://www.instagram.com/toccomagicocoiffure" target="_blank" rel="noopener" aria-label="Instagram">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
-        </a>
-      </div>
-      <div class="footer-links">
-        <a href="#hero" data-i18n="footer_home">Home</a>
-        <a href="#about" data-i18n="footer_about">Chi siamo</a>
-        <a href="#services" data-i18n="footer_services">Servizi</a>
-        <a href="#services" data-i18n="footer_price">Listino</a>
-        <a href="#gallery" data-i18n="footer_gallery">Galleria</a>
-        <a href="#contact" data-i18n="footer_contact">Contatti</a>
-      </div>
-      <p style="margin-top:16px;font-size:0.75rem;color:var(--beige-dark);opacity:0.6;">&copy; 2026 Tocco Magico Coiffure — <span data-i18n="footer_rights">Tutti i diritti riservati</span></p>
-      <p style="margin-top:8px;font-size:0.7rem;color:var(--beige-dark);opacity:0.4;"><span data-i18n="footer_credit">Sito creato da</span> <a href="https://thelight.ch" target="_blank" rel="noopener" style="color:var(--primary);opacity:0.7;">TheLight</a></p>
-    </div>
-  </footer>
-
-  <!-- LIGHTBOX -->
-  <div class="lightbox" id="lightbox">
-    <button class="lightbox-close" aria-label="Chiudi">&times;</button>
-    <img src="" alt="Lightbox">
   </div>
 
-  <script src="assets/js/lang.js"></script>
-  <script src="assets/js/script.js"></script>
-  <script src="assets/js/reviews.js"></script>
+  <div class="card-separator">
+    <span class="sep-line"></span>
+    <span class="sep-diamond"></span>
+    <span class="sep-line"></span>
+  </div>
+
+  <div class="card">
+    <img src="IMG/mare-azzurro-04.jpg" alt="Mare azzurro">
+    <div class="card-text">
+      <h3 data-i18n="gallery_card2_title">Mare Azzurro Infinito</h3>
+      <p data-i18n="gallery_card2_desc">L'acqua cristallina si fonde con il cielo in un infinito di blu.
+         Il rumore delle onde racconta storie antiche di vento e sale,
+         regalando una serenità che solo il mare sa dare.</p>
+    </div>
+  </div>
+
+  <div class="card-separator">
+    <span class="sep-line"></span>
+    <span class="sep-icon">~ ~ ~</span>
+    <span class="sep-line"></span>
+  </div>
+
+  <div class="card">
+    <img src="IMG/cielo-stellato-10.jpg" alt="Cielo stellato">
+    <div class="card-text">
+      <h3 data-i18n="gallery_card3_title">Cielo Stellato</h3>
+      <p data-i18n="gallery_card3_desc">Migliaia di stelle punteggiano il buio della notte come diamanti sparsi
+         su velluto nero. Ogni luce è un universo lontano, un promemoria
+         di quanto siamo piccoli e quanto sia immenso il cosmo.</p>
+    </div>
+  </div>
+
+  <div class="card-separator">
+    <span class="sep-line"></span>
+    <span class="sep-diamond"></span>
+    <span class="sep-line"></span>
+  </div>
+
+  <div class="card">
+    <img src="IMG/bosco-verde-08.jpg" alt="Bosco verde">
+    <div class="card-text">
+      <h3 data-i18n="gallery_card4_title">Nel Cuore del Bosco</h3>
+      <p data-i18n="gallery_card4_desc">I raggi di sole filtrano tra le fronde, creando danze di luce e ombra
+         sul sentiero. L'aria profuma di muschio e terra bagnata,
+         un rifugio naturale lontano dal rumore del mondo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- GRIGLIA TUTTE LE FOTO -->
+<section class="grid-section">
+  <h2 class="section-title" data-i18n="gallery_grid_title">Tutte le Foto</h2>
+  <span class="section-divider"></span>
+  <div class="grid" id="grid"></div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" aria-label="Chiudi">&times;</button>
+  <img id="lightboxImg" src="" alt="Ingrandita">
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="social-links">
+    <a href="https://www.facebook.com/toccomagicocoiffure" target="_blank" rel="noopener" aria-label="Facebook">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+    </a>
+    <a href="https://www.instagram.com/toccomagicocoiffure" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
+    </a>
+  </div>
+  <div class="footer-links">
+    <a href="index.html" data-i18n="footer_home">Home</a>
+    <a href="index.html#about" data-i18n="footer_about">Chi siamo</a>
+    <a href="index.html#services" data-i18n="footer_services">Servizi</a>
+    <a href="listing/listino.html" data-i18n="footer_price">Listino</a>
+    <a href="index.html#gallery" data-i18n="footer_gallery">Galleria</a>
+    <a href="index.html#contact" data-i18n="footer_contact">Contatti</a>
+  </div>
+  <p>Via Camminata 6, 6500 Bellinzona — +41 91 825 19 18</p>
+  <p style="opacity:0.5;" data-i18n="footer_rights_copy">&copy; 2026 Tocco Magico Coiffure — Tutti i diritti riservati</p>
+  <p style="margin-top:8px;font-size:0.7rem;opacity:0.4;"><span data-i18n="footer_credit">Sito creato da</span> <a href="https://thelight.ch" target="_blank" rel="noopener" style="color:var(--primary);opacity:0.7;">TheLight</a></p>
+</footer>
+
+<script>
+  const photos = [
+    'IMG/tramonto-01.jpg', 'IMG/paesaggio-02.jpg', 'IMG/citta-notte-03.jpg',
+    'IMG/mare-azzurro-04.jpg', 'IMG/montagna-neve-05.jpg', 'IMG/fiore-rosa-06.jpg',
+    'IMG/strada-sera-07.jpg', 'IMG/bosco-verde-08.jpg', 'IMG/lago-chiaro-09.jpg',
+    'IMG/cielo-stellato-10.jpg', 'IMG/prato-sole-11.jpg', 'IMG/vecchio-ponte-12.jpg',
+    'IMG/architettura-13.jpg', 'IMG/giardino-segreto-14.jpg', 'IMG/barca-riposo-15.jpg',
+    'IMG/collina-dorata-16.jpg'
+  ];
+
+  function buildBgScroll() {
+    const container = document.getElementById('bgScroll');
+    const numCols = 6;
+    const imgsPerSet = 10;
+
+    for (let c = 0; c < numCols; c++) {
+      const col = document.createElement('div');
+      col.className = 'col';
+      col.style.left = (c * (100 / numCols)) + '%';
+      col.style.width = (100 / numCols) + '%';
+
+      const track = document.createElement('div');
+      track.className = 'scroll-track';
+      track.style.animationDuration = (22 + Math.random() * 16) + 's';
+      track.style.animationDelay = (-Math.random() * 30) + 's';
+
+      const imgs = [];
+      for (let i = 0; i < imgsPerSet; i++) {
+        imgs.push(photos[Math.floor(Math.random() * photos.length)]);
+      }
+
+      imgs.forEach(src => {
+        const img = document.createElement('img');
+        img.src = src;
+        track.appendChild(img);
+      });
+
+      imgs.forEach(src => {
+        const img = document.createElement('img');
+        img.src = src;
+        track.appendChild(img);
+      });
+
+      col.appendChild(track);
+      container.appendChild(col);
+    }
+  }
+
+  function buildGrid() {
+    const grid = document.getElementById('grid');
+    photos.forEach(p => {
+      const img = document.createElement('img');
+      img.src = p;
+      img.alt = p.replace('.jpg','').replace(/-/g,' ');
+      img.loading = 'lazy';
+      img.onclick = () => {
+        document.getElementById('lightboxImg').src = p;
+        document.getElementById('lightbox').classList.add('active');
+      };
+      grid.appendChild(img);
+    });
+  }
+
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target !== document.getElementById('lightboxImg')) {
+      this.classList.remove('active');
+    }
+  });
+
+  buildBgScroll();
+  buildGrid();
+</script>
+<script src="assets/js/lang.js"></script>
 </body>
 </html>
