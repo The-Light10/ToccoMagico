@@ -132,6 +132,19 @@
       color: var(--primary);
       background: rgba(139,125,114,0.08);
     }
+    .lang-selector { display:flex; gap:4px; align-items:center; margin-left:12px; }
+    .lang-btn {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--beige-dark);
+      font-size: 0.75rem;
+      padding: 5px 10px;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .lang-btn:hover { border-color: var(--primary); color: var(--primary); }
+    .lang-btn.active { background: rgba(139,125,114,0.15); border-color: var(--primary); color: var(--primary); }
   </style>
 </head>
 <body>
@@ -140,12 +153,13 @@
     <div class="container">
       <nav class="nav">
         <ul class="nav-links">
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="../index.html#about">Info</a></li>
-          <li><a href="listino.html">Listino</a></li>
-          <li><a href="../index.html#gallery">Galleria</a></li>
-          <li><a href="../index.html#contact">Contatti</a></li>
+          <li><a href="../index.html" data-i18n="footer_home">Home</a></li>
+          <li><a href="../index.html#about" data-i18n="footer_about">Info</a></li>
+          <li><a href="listino.html" data-i18n="footer_price">Listino</a></li>
+          <li><a href="../index.html#gallery" data-i18n="footer_gallery">Galleria</a></li>
+          <li><a href="../index.html#contact" data-i18n="footer_contact">Contatti</a></li>
         </ul>
+        <div class="lang-selector"></div>
         <button class="menu-toggle" aria-label="Menu">
           <span></span><span></span><span></span>
         </button>
@@ -155,8 +169,8 @@
 
   <section class="price-header">
     <div class="container">
-      <div class="subtitle">Tocco Magico Coiffure</div>
-      <h1>Listino Prezzi</h1>
+      <div class="subtitle" data-i18n="listino_subtitle">Tocco Magico Coiffure</div>
+      <h1 data-i18n="listino_title">Listino Prezzi</h1>
     </div>
   </section>
 
@@ -164,418 +178,403 @@
     <div class="price-content">
 
       <nav class="category-nav reveal">
-        <a href="#donna">Donna</a>
-        <a href="#uomo">Uomo</a>
-        <a href="#bambino">Bambino</a>
-        <a href="#trattamenti">Trattamenti</a>
-        <a href="#keune">Prodotti Keune</a>
+        <a href="#donna" data-i18n="listino_cat_woman">Donna</a>
+        <a href="#uomo" data-i18n="listino_cat_man">Uomo</a>
+        <a href="#bambino" data-i18n="listino_cat_kids">Bambino</a>
+        <a href="#trattamenti" data-i18n="listino_cat_treatments">Trattamenti</a>
+        <a href="#keune" data-i18n="listino_cat_keune">Prodotti Keune</a>
       </nav>
 
       <!-- ==================== DONNA ==================== -->
-      <div class="price-section-title" id="donna">Donna</div>
+      <div class="price-section-title" id="donna" data-i18n="listino_cat_woman">Donna</div>
 
       <!-- TAGLIO & FINISH -->
       <div class="price-table reveal">
-        <div class="price-table-title">Taglio & Finish</div>
+        <div class="price-table-title" data-i18n="listino_tt_cut_finish">Taglio & Finish</div>
         <div class="price-row">
-          <span class="name">Taglio donna</span>
+          <span class="name" data-i18n="listino_s_w_cut">Taglio donna</span>
           <span class="amount">CHF 48</span>
         </div>
         <div class="price-row">
-          <span class="name">Taglio cortissimo donna + piega</span>
+          <span class="name" data-i18n="listino_s_w_cut_short_piega">Taglio cortissimo donna + piega</span>
           <span class="amount">CHF 59</span>
         </div>
         <div class="price-row">
-          <span class="name">Taglio frangia</span>
+          <span class="name" data-i18n="listino_s_w_cut_bangs">Taglio frangia</span>
           <span class="amount">CHF 12</span>
         </div>
       </div>
 
       <!-- STYLING — PIEGA -->
       <div class="price-table reveal">
-        <div class="price-table-title">Piega</div>
+        <div class="price-table-title" data-i18n="listino_tt_blowdry">Piega</div>
         <div class="price-row">
-          <span class="name">Capelli corti</span>
+          <span class="name" data-i18n="listino_s_w_short">Capelli corti</span>
           <span class="amount">CHF 42</span>
         </div>
         <div class="price-row">
-          <span class="name">Capelli medi</span>
+          <span class="name" data-i18n="listino_s_w_medium">Capelli medi</span>
           <span class="amount">CHF 47</span>
         </div>
         <div class="price-row">
-          <span class="name">Capelli lunghi</span>
+          <span class="name" data-i18n="listino_s_w_long">Capelli lunghi</span>
           <span class="amount">CHF 52</span>
         </div>
         <div class="price-row">
-          <span class="name">Lunga plus</span>
+          <span class="name" data-i18n="listino_s_w_long_plus">Lunga plus</span>
           <span class="amount">CHF 57</span>
         </div>
       </div>
 
       <!-- STYLING — ASCIUGATURA VELOCE -->
       <div class="price-table reveal">
-        <div class="price-table-title">Asciugatura veloce</div>
+        <div class="price-table-title" data-i18n="listino_tt_quick_dry">Asciugatura veloce</div>
         <div class="price-row">
-          <span class="name">Capelli medi</span>
+          <span class="name" data-i18n="listino_s_w_medium">Capelli medi</span>
           <span class="amount">CHF 23</span>
         </div>
         <div class="price-row">
-          <span class="name">Capelli lunghi</span>
+          <span class="name" data-i18n="listino_s_w_long">Capelli lunghi</span>
           <span class="amount">CHF 37</span>
         </div>
       </div>
 
       <!-- STYLING — PETTINATA / PIASTRA / BABYLISS -->
       <div class="price-table reveal">
-        <div class="price-table-title">Pettinata · Piastra · Babyliss</div>
+        <div class="price-table-title" data-i18n="listino_tt_styling">Pettinata · Piastra · Babyliss</div>
         <div class="price-row">
-          <span class="name">Capelli medi</span>
+          <span class="name" data-i18n="listino_s_w_medium">Capelli medi</span>
           <span class="amount">CHF 23</span>
         </div>
         <div class="price-row">
-          <span class="name">Capelli lunghi</span>
+          <span class="name" data-i18n="listino_s_w_long">Capelli lunghi</span>
           <span class="amount">CHF 37</span>
         </div>
       </div>
 
       <!-- RACCOLTO SERA / SPOSA -->
       <div class="price-table reveal">
-        <div class="price-table-title">Raccolto sera · Sposa</div>
+        <div class="price-table-title" data-i18n="listino_tt_updo">Raccolto sera · Sposa</div>
         <div class="price-row">
-          <span class="name">Semplice</span>
+          <span class="name" data-i18n="listino_s_simple">Semplice</span>
           <span class="amount">CHF 90</span>
         </div>
         <div class="price-row">
-          <span class="name">Elaborata</span>
+          <span class="name" data-i18n="listino_s_elaborate">Elaborata</span>
           <span class="amount">CHF 180</span>
         </div>
         <div class="price-row">
-          <span class="name">Molto elaborata</span>
+          <span class="name" data-i18n="listino_s_very_elaborate">Molto elaborata</span>
           <span class="amount">CHF 270</span>
         </div>
         <div class="price-row note">
-          <span class="name">Prova 1 ora</span>
+          <span class="name" data-i18n="listino_s_trial">Prova 1 ora</span>
           <span class="amount">CHF 100</span>
         </div>
         <div class="price-row note">
-          <span class="name">Ogni 30 minuti in aggiunta</span>
+          <span class="name" data-i18n="listino_s_trial_extra">Ogni 30 minuti in aggiunta</span>
           <span class="amount">CHF 60</span>
         </div>
       </div>
 
       <!-- EXTENSIONS & PARRUCCA -->
       <div class="price-table reveal">
-        <div class="price-table-title">Extensions & Parrucca</div>
+        <div class="price-table-title" data-i18n="listino_tt_extensions">Extensions & Parrucca</div>
         <div class="price-row">
-          <span class="name">Extensions ciocchetta</span>
+          <span class="name" data-i18n="listino_s_ext_strand">Extensions ciocchetta</span>
           <span class="amount">CHF 10</span>
         </div>
         <div class="price-row">
-          <span class="name">Extensions fascia media</span>
+          <span class="name" data-i18n="listino_s_ext_mid">Extensions fascia media</span>
           <span class="amount">CHF 120</span>
         </div>
         <div class="price-row">
-          <span class="name">Extensions fascia lunga</span>
+          <span class="name" data-i18n="listino_s_ext_long">Extensions fascia lunga</span>
           <span class="amount">CHF 230</span>
         </div>
         <div class="price-row">
-          <span class="name">Parrucche</span>
-          <span class="amount">Su consulenza</span>
+          <span class="name" data-i18n="listino_s_wigs">Parrucche</span>
+          <span class="amount" data-i18n="listino_price_consult">Su consulenza</span>
         </div>
       </div>
 
       <!-- ==================== COLORAZIONE & PERMANENTE ==================== -->
-      <div class="price-section-title" id="colori">Colorazione & Permanente</div>
+      <div class="price-section-title" id="colori" data-i18n="listino_sec_color">Colorazione & Permanente</div>
 
-      <!-- COLORAZIONE CLASSICA -->
       <div class="price-table reveal">
-        <div class="price-table-title">Colorazione classica</div>
+        <div class="price-table-title" data-i18n="listino_tt_color_classic">Colorazione classica</div>
         <div class="price-row">
-          <span class="name">Solo radice</span>
+          <span class="name" data-i18n="listino_s_root_only">Solo radice</span>
           <span class="amount">CHF 69</span>
         </div>
         <div class="price-row">
-          <span class="name">Radice + lunghezze</span>
+          <span class="name" data-i18n="listino_s_root_lengths">Radice + lunghezze</span>
           <span class="amount">CHF 79</span>
         </div>
       </div>
 
-      <!-- COLORAZIONE NATURALE VEGAN -->
       <div class="price-table reveal">
-        <div class="price-table-title">Colorazione naturale vegan</div>
+        <div class="price-table-title" data-i18n="listino_tt_color_vegan">Colorazione naturale vegan</div>
         <div class="price-row">
-          <span class="name">Solo radice</span>
+          <span class="name" data-i18n="listino_s_root_only">Solo radice</span>
           <span class="amount">CHF 72</span>
         </div>
         <div class="price-row">
-          <span class="name">Radice + lunghezze</span>
+          <span class="name" data-i18n="listino_s_root_lengths">Radice + lunghezze</span>
           <span class="amount">CHF 82</span>
         </div>
       </div>
 
-      <!-- RITOCCO COLORE -->
       <div class="price-table reveal">
-        <div class="price-table-title">Ritocco colore</div>
+        <div class="price-table-title" data-i18n="listino_tt_color_touchup">Ritocco colore</div>
         <div class="price-row">
-          <span class="name">Ritocco colore</span>
+          <span class="name" data-i18n="listino_tt_color_touchup">Ritocco colore</span>
           <span class="amount">CHF 51</span>
         </div>
       </div>
 
-      <!-- TONALIZZANTE -->
       <div class="price-table reveal">
-        <div class="price-table-title">Tonalizzante</div>
+        <div class="price-table-title" data-i18n="listino_tt_toner">Tonalizzante</div>
         <div class="price-row">
-          <span class="name">Capelli corti</span>
+          <span class="name" data-i18n="listino_s_w_short">Capelli corti</span>
           <span class="amount">CHF 40</span>
         </div>
         <div class="price-row">
-          <span class="name">Capelli medi</span>
+          <span class="name" data-i18n="listino_s_w_medium">Capelli medi</span>
           <span class="amount">CHF 45</span>
         </div>
         <div class="price-row">
-          <span class="name">Capelli lunghi</span>
+          <span class="name" data-i18n="listino_s_w_long">Capelli lunghi</span>
           <span class="amount">CHF 50</span>
         </div>
       </div>
 
-      <!-- MÈCHES -->
       <div class="price-table reveal">
-        <div class="price-table-title">Mèches</div>
+        <div class="price-table-title" data-i18n="listino_tt_highlights">Mèches</div>
         <div class="price-row">
-          <span class="name">Capelli corti</span>
+          <span class="name" data-i18n="listino_s_w_short">Capelli corti</span>
           <span class="amount">CHF 90</span>
         </div>
         <div class="price-row">
-          <span class="name">Capelli medi</span>
+          <span class="name" data-i18n="listino_s_w_medium">Capelli medi</span>
           <span class="amount">CHF 125</span>
         </div>
         <div class="price-row">
-          <span class="name">Capelli lunghi</span>
+          <span class="name" data-i18n="listino_s_w_long">Capelli lunghi</span>
           <span class="amount">CHF 170</span>
         </div>
       </div>
 
-      <!-- RITOCCO MÈCHES -->
       <div class="price-table reveal">
-        <div class="price-table-title">Ritocco mèches</div>
+        <div class="price-table-title" data-i18n="listino_tt_highlights_touchup">Ritocco mèches</div>
         <div class="price-row">
-          <span class="name">Effetto leggero</span>
+          <span class="name" data-i18n="listino_s_effect_light">Effetto leggero</span>
           <span class="amount">CHF 69</span>
         </div>
         <div class="price-row">
-          <span class="name">Effetto pieno</span>
+          <span class="name" data-i18n="listino_s_effect_full">Effetto pieno</span>
           <span class="amount">CHF 89</span>
         </div>
       </div>
 
-      <!-- BALAYAGE -->
       <div class="price-table reveal">
-        <div class="price-table-title">Balayage</div>
+        <div class="price-table-title" data-i18n="listino_tt_balayage">Balayage</div>
         <div class="price-row">
-          <span class="name">Capelli corti</span>
+          <span class="name" data-i18n="listino_s_w_short">Capelli corti</span>
           <span class="amount">CHF 160</span>
         </div>
         <div class="price-row">
-          <span class="name">Capelli medi</span>
+          <span class="name" data-i18n="listino_s_w_medium">Capelli medi</span>
           <span class="amount">CHF 260</span>
         </div>
         <div class="price-row">
-          <span class="name">Capelli lunghi</span>
+          <span class="name" data-i18n="listino_s_w_long">Capelli lunghi</span>
           <span class="amount">CHF 360</span>
         </div>
       </div>
 
-      <!-- RITOCCO BALAYAGE -->
       <div class="price-table reveal">
-        <div class="price-table-title">Ritocco balayage</div>
+        <div class="price-table-title" data-i18n="listino_tt_balayage_touchup">Ritocco balayage</div>
         <div class="price-row">
-          <span class="name">Effetto contouring</span>
+          <span class="name" data-i18n="listino_s_contouring">Effetto contouring</span>
           <span class="amount">CHF 255</span>
         </div>
         <div class="price-row">
-          <span class="name">Effetto leggero</span>
+          <span class="name" data-i18n="listino_s_effect_light">Effetto leggero</span>
           <span class="amount">CHF 355</span>
         </div>
         <div class="price-row">
-          <span class="name">Effetto pieno</span>
+          <span class="name" data-i18n="listino_s_effect_full">Effetto pieno</span>
           <span class="amount">CHF 455</span>
         </div>
       </div>
 
-      <!-- ==================== TRATTAMENTI & DECOLORAZIONI ==================== -->
-      <div class="price-section-title">Trattamenti & Decolorazioni</div>
+      <div class="price-section-title" data-i18n="listino_sec_treatments">Trattamenti & Decolorazioni</div>
 
       <div class="price-table reveal">
-        <div class="price-table-title">Trattamenti</div>
+        <div class="price-table-title" data-i18n="listino_tt_treatments">Trattamenti</div>
         <div class="price-row">
-          <span class="name">Pulizia colore</span>
+          <span class="name" data-i18n="listino_s_color_clean">Pulizia colore</span>
           <span class="amount">CHF 100</span>
         </div>
         <div class="price-row">
-          <span class="name">Pre-pigmentazione</span>
+          <span class="name" data-i18n="listino_s_prepigmentation">Pre-pigmentazione</span>
           <span class="amount">CHF 121</span>
         </div>
         <div class="price-row">
-          <span class="name">Decolorazione solo radice</span>
+          <span class="name" data-i18n="listino_s_bleach_root">Decolorazione solo radice</span>
           <span class="amount">CHF 146</span>
         </div>
         <div class="price-row">
-          <span class="name">Decolorazione radice + lunghezze</span>
-          <span class="amount">Su consulenza</span>
+          <span class="name" data-i18n="listino_s_bleach_full">Decolorazione radice + lunghezze</span>
+          <span class="amount" data-i18n="listino_price_consult">Su consulenza</span>
         </div>
       </div>
 
-      <!-- STIRATURA CLASSICA -->
       <div class="price-table reveal">
-        <div class="price-table-title">Stiratura classica</div>
+        <div class="price-table-title" data-i18n="listino_tt_iron">Stiratura classica</div>
         <div class="price-row">
-          <span class="name">Capelli corti</span>
+          <span class="name" data-i18n="listino_s_w_short">Capelli corti</span>
           <span class="amount">CHF 160</span>
         </div>
         <div class="price-row">
-          <span class="name">Capelli medi</span>
+          <span class="name" data-i18n="listino_s_w_medium">Capelli medi</span>
           <span class="amount">CHF 260</span>
         </div>
         <div class="price-row">
-          <span class="name">Capelli lunghi</span>
+          <span class="name" data-i18n="listino_s_w_long">Capelli lunghi</span>
           <span class="amount">CHF 360</span>
         </div>
       </div>
 
-      <!-- STIRATURA KERATINA -->
       <div class="price-table reveal">
-        <div class="price-table-title">Stiratura keratina</div>
+        <div class="price-table-title" data-i18n="listino_tt_keratin">Stiratura keratina</div>
         <div class="price-row">
-          <span class="name">Capelli corti</span>
+          <span class="name" data-i18n="listino_s_w_short">Capelli corti</span>
           <span class="amount">CHF 255</span>
         </div>
         <div class="price-row">
-          <span class="name">Capelli medi</span>
+          <span class="name" data-i18n="listino_s_w_medium">Capelli medi</span>
           <span class="amount">CHF 355</span>
         </div>
         <div class="price-row">
-          <span class="name">Capelli lunghi</span>
+          <span class="name" data-i18n="listino_s_w_long">Capelli lunghi</span>
           <span class="amount">CHF 455</span>
         </div>
       </div>
 
-      <!-- PERMANENTE -->
       <div class="price-table reveal">
-        <div class="price-table-title">Permanente</div>
+        <div class="price-table-title" data-i18n="listino_tt_perm">Permanente</div>
         <div class="price-row">
-          <span class="name">Capelli corti</span>
-          <span class="amount">Su consulenza</span>
+          <span class="name" data-i18n="listino_s_w_short">Capelli corti</span>
+          <span class="amount" data-i18n="listino_price_consult">Su consulenza</span>
         </div>
         <div class="price-row">
-          <span class="name">Capelli medi</span>
-          <span class="amount">Su consulenza</span>
+          <span class="name" data-i18n="listino_s_w_medium">Capelli medi</span>
+          <span class="amount" data-i18n="listino_price_consult">Su consulenza</span>
         </div>
         <div class="price-row">
-          <span class="name">Capelli lunghi</span>
-          <span class="amount">Su consulenza</span>
+          <span class="name" data-i18n="listino_s_w_long">Capelli lunghi</span>
+          <span class="amount" data-i18n="listino_price_consult">Su consulenza</span>
         </div>
       </div>
 
-      <!-- ==================== UOMO ==================== -->
-      <div class="price-section-title" id="uomo">Uomo</div>
+      <div class="price-section-title" id="uomo" data-i18n="listino_cat_man">Uomo</div>
 
       <div class="price-table reveal">
-        <div class="price-table-title">Taglio & Styling uomo</div>
+        <div class="price-table-title" data-i18n="listino_tt_mens_cut">Taglio & Styling uomo</div>
         <div class="price-row">
-          <span class="name">Taglio uomo</span>
+          <span class="name" data-i18n="listino_s_m_cut">Taglio uomo</span>
           <span class="amount">CHF 42</span>
         </div>
         <div class="price-row">
-          <span class="name">Taglio con torni</span>
+          <span class="name" data-i18n="listino_s_m_torni">Taglio con torni</span>
           <span class="amount">CHF 22</span>
         </div>
         <div class="price-row">
-          <span class="name">Taglio con torni + piega</span>
+          <span class="name" data-i18n="listino_s_m_torni_piega">Taglio con torni + piega</span>
           <span class="amount">CHF 30</span>
         </div>
         <div class="price-row">
-          <span class="name">Taglio macchinetta</span>
+          <span class="name" data-i18n="listino_s_m_clipper">Taglio macchinetta</span>
           <span class="amount">CHF 27</span>
         </div>
         <div class="price-row">
-          <span class="name">Piega corti</span>
+          <span class="name" data-i18n="listino_s_m_piega_short">Piega corti</span>
           <span class="amount">CHF 19</span>
         </div>
         <div class="price-row">
-          <span class="name">Piega lunghi</span>
+          <span class="name" data-i18n="listino_s_m_piega_long">Piega lunghi</span>
           <span class="amount">CHF 39</span>
         </div>
         <div class="price-row">
-          <span class="name">Permanente uomo</span>
+          <span class="name" data-i18n="listino_s_m_perm">Permanente uomo</span>
           <span class="amount">CHF 80</span>
         </div>
       </div>
 
-      <!-- ==================== BAMBINO ==================== -->
-      <div class="price-section-title" id="bambino">Bambino</div>
+      <div class="price-section-title" id="bambino" data-i18n="listino_cat_kids">Bambino</div>
 
       <div class="price-table reveal">
-        <div class="price-table-title">Taglio bambino & studente</div>
+        <div class="price-table-title" data-i18n="listino_tt_kids_cut">Taglio bambino & studente</div>
         <div class="price-row">
-          <span class="name">Taglio bambino / A<span class="sub">da 0 a 12 anni</span></span>
+          <span class="name" data-i18n="listino_s_kid">Taglio bambino / A<span class="sub" data-i18n="listino_sub_kid">da 0 a 12 anni</span></span>
           <span class="amount">CHF 27</span>
         </div>
         <div class="price-row">
-          <span class="name">Taglio studente<span class="sub">da 13 a 25 anni</span></span>
+          <span class="name" data-i18n="listino_s_student">Taglio studente<span class="sub" data-i18n="listino_sub_student">da 13 a 25 anni</span></span>
           <span class="amount">CHF 37</span>
         </div>
         <div class="price-row">
-          <span class="name">Taglio + piega studentessa capelli medi<span class="sub">da 13 a 25 anni</span></span>
+          <span class="name" data-i18n="listino_s_student_med">Taglio + piega studentessa capelli medi<span class="sub" data-i18n="listino_sub_student">da 13 a 25 anni</span></span>
           <span class="amount">CHF 61</span>
         </div>
         <div class="price-row">
-          <span class="name">Taglio + piega studentessa capelli lunghi<span class="sub">da 13 a 25 anni</span></span>
+          <span class="name" data-i18n="listino_s_student_long">Taglio + piega studentessa capelli lunghi<span class="sub" data-i18n="listino_sub_student">da 13 a 25 anni</span></span>
           <span class="amount">CHF 81</span>
         </div>
       </div>
 
-      <!-- ==================== TRATTAMENTI KEUNE ==================== -->
-      <div class="price-section-title" id="keune">Prodotti Keune</div>
+      <div class="price-section-title" id="keune" data-i18n="listino_cat_keune">Prodotti Keune</div>
 
       <div class="price-table reveal">
-        <div class="price-table-title">Trattamenti Keune</div>
+        <div class="price-table-title" data-i18n="listino_tt_keune">Trattamenti Keune</div>
         <div class="price-row">
-          <span class="name">Shampoo</span>
+          <span class="name" data-i18n="listino_s_shampoo">Shampoo</span>
           <span class="amount">CHF 6</span>
         </div>
         <div class="price-row">
-          <span class="name">Condizionere</span>
+          <span class="name" data-i18n="listino_s_conditioner">Condizionere</span>
           <span class="amount">CHF 6</span>
         </div>
         <div class="price-row">
-          <span class="name">Maschera</span>
+          <span class="name" data-i18n="listino_s_mask">Maschera</span>
           <span class="amount">CHF 11</span>
         </div>
         <div class="price-row">
-          <span class="name">Shampoo e condizionere</span>
+          <span class="name" data-i18n="listino_s_shampoo_cond">Shampoo e condizionere</span>
           <span class="amount">CHF 11</span>
         </div>
         <div class="price-row">
-          <span class="name">Shampoo e maschera</span>
+          <span class="name" data-i18n="listino_s_shampoo_mask">Shampoo e maschera</span>
           <span class="amount">CHF 16</span>
         </div>
         <div class="price-row">
-          <span class="name">Spa Vital Nutrition</span>
+          <span class="name" data-i18n="listino_s_spa">Spa Vital Nutrition</span>
           <span class="amount">CHF 25</span>
         </div>
         <div class="price-row">
-          <span class="name">Fiala</span>
+          <span class="name" data-i18n="listino_s_ampoule">Fiala</span>
           <span class="amount">CHF 12</span>
         </div>
       </div>
 
       <div class="notice-banner reveal">
-        <p>In caso di mancata disdetta con almeno 24h di anticipo, verrà addebitato il 50% del costo del servizio.</p>
-        <p style="margin-top:8px;">Reclami entro 48 ore.</p>
+        <p data-i18n="notice">In caso di mancata disdetta con almeno 24h di anticipo, verrà addebitato il 50% del costo del servizio.</p>
+        <p style="margin-top:8px;" data-i18n="notice_claims">Reclami entro 48 ore.</p>
       </div>
 
-      <p class="price-note reveal">
+      <p class="price-note reveal" data-i18n="listino_note">
         Tutti i prezzi sono in franchi svizzeri (CHF).<br>
         Per informazioni e appuntamenti contattaci ai numeri indicati.
       </p>
@@ -601,15 +600,16 @@
         </a>
       </div>
       <div class="footer-links">
-        <a href="../">Home</a>
-        <a href="../index.html#services">Servizi</a>
-        <a href="../index.html#contact">Contatti</a>
+        <a href="../" data-i18n="footer_home">Home</a>
+        <a href="../index.html#services" data-i18n="footer_services">Servizi</a>
+        <a href="../index.html#contact" data-i18n="footer_contact">Contatti</a>
       </div>
-      <p style="margin-top:16px;font-size:0.75rem;color:var(--beige-dark);opacity:0.6;">&copy; 2026 Tocco Magico Coiffure — Tutti i diritti riservati</p>
-      <p style="margin-top:8px;font-size:0.7rem;color:var(--beige-dark);opacity:0.4;">Sito creato da <a href="https://thelight.ch" target="_blank" rel="noopener" style="color:var(--primary);opacity:0.7;">TheLight</a></p>
+      <p style="margin-top:16px;font-size:0.75rem;color:var(--beige-dark);opacity:0.6;" data-i18n="footer_rights_copy">&copy; 2026 Tocco Magico Coiffure — Tutti i diritti riservati</p>
+      <p style="margin-top:8px;font-size:0.7rem;color:var(--beige-dark);opacity:0.4;"><span data-i18n="footer_credit">Sito creato da</span> <a href="https://thelight.ch" target="_blank" rel="noopener" style="color:var(--primary);opacity:0.7;">TheLight</a></p>
     </div>
   </footer>
 
   <script src="../assets/js/script.js"></script>
+  <script src="../assets/js/lang.js"></script>
 </body>
 </html>

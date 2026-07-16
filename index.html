@@ -4,11 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tocco Magico Coiffure — Coiffure a Bellinzona</title>
-  <meta name="description" content="Tocco Magico Coiffure a Bellinzona: taglio, colore, trattamenti, acconciature matrimonio e manicure gel. Professionalità e stile in un ambiente accogliente.">
+  <meta name="description" content="Tocco Magico Coiffure a Bellinzona: taglio, colore, trattamenti, acconciature matrimonio e manicure gel.">
   <link rel="icon" type="image/png" sizes="32x32" href="IMG/favicon-32.png">
   <link rel="icon" type="image/png" href="IMG/favicon.png">
   <link rel="apple-touch-icon" href="IMG/favicon.png">
   <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .lang-selector { display:flex; gap:4px; align-items:center; }
+    .lang-btn { background:none; border:1px solid rgba(255,255,255,0.1); color:var(--beige-dark); padding:4px 10px; border-radius:50px; cursor:pointer; font-size:0.72rem; transition:0.3s; letter-spacing:0.5px; }
+    .lang-btn:hover { border-color:var(--primary); color:var(--primary); }
+    .lang-btn.active { border-color:var(--primary); color:var(--primary); background:rgba(162,144,98,0.1); }
+    .nav-links .lang-selector { margin-left:12px; }
+    @media(max-width:768px) {
+      .nav-links .lang-selector { margin-left:0; margin-top:12px; justify-content:flex-start; }
+    }
+  </style>
 </head>
 <body>
 
@@ -17,10 +27,11 @@
     <div class="container">
       <nav class="nav">
         <ul class="nav-links">
-          <li><a href="#about">Chi siamo</a></li>
-          <li><a href="#services">Servizi</a></li>
-          <li><a href="#gallery">Galleria</a></li>
-          <li><a href="#contact">Contatti</a></li>
+          <li><a href="#about" data-i18n="nav_about">Chi siamo</a></li>
+          <li><a href="#services" data-i18n="nav_services">Servizi</a></li>
+          <li><a href="#gallery" data-i18n="nav_gallery">Galleria</a></li>
+          <li><a href="#contact" data-i18n="nav_contact">Contatti</a></li>
+          <li class="lang-selector"></li>
         </ul>
         <button class="menu-toggle" aria-label="Menu">
           <span></span><span></span><span></span>
@@ -36,9 +47,9 @@
         <div class="hero-layout">
           <img src="IMG/logo-gold.png" alt="Tocco Magico Coiffure" class="hero-logo">
           <div class="hero-text">
-            <div class="hero-badge">Coiffure a Bellinzona</div>
-            <h1>Il tuo stile,<br>il nostro <span>tocco magico</span></h1>
-            <p>Da anni trasformiamo capelli in opere d'arte. Taglio, colore, trattamenti e molto più in un'atmosfera accogliente e professionale.</p>
+            <div class="hero-badge" data-i18n="hero_badge">Coiffure a Bellinzona</div>
+            <h1><span data-i18n="hero_title_1">Il tuo stile,</span><br><span data-i18n="hero_title_2">il nostro </span><span data-i18n="hero_title_3" style="color:var(--primary);">tocco magico</span></h1>
+            <p data-i18n="hero_desc">Da anni trasformiamo capelli in opere d'arte. Taglio, colore, trattamenti e molto più in un'atmosfera accogliente e professionale.</p>
             <div class="hero-actions">
               <a href="tel:+41918251918" class="btn btn-primary">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -54,7 +65,7 @@
       </div>
     </div>
     <div class="scroll-indicator">
-      <span>Scopri di più</span>
+      <span data-i18n="hero_cta">Scopri di più</span>
       <div class="scroll-line"></div>
     </div>
   </section>
@@ -67,34 +78,34 @@
           <img src="https://dynl.mktgcdn.com/p/FhHhtbMGb0-uVaI-qkRZek_qgnRWczvoHkglqqKq4IE/319x398" alt="Tocco Magico Coiffure salone" loading="lazy">
         </div>
         <div class="about-text">
-          <div class="section-label">Chi siamo</div>
-          <h2 class="section-title reveal">Dove l'arte incontra<br>la professionalità</h2>
-          <p class="section-sub reveal">Sei alla ricerca di un salone di Coiffure a Bellinzona che unisca professionalità, stile e attenzione ai dettagli? Tocco Magico Coiffure è la scelta perfetta per ogni esigenza di hairstyling.</p>
+          <div class="section-label" data-i18n="about_label">Chi siamo</div>
+          <h2 class="section-title reveal" data-i18n="about_title">Dove l'arte incontra<br>la professionalità</h2>
+          <p class="section-sub reveal" data-i18n="about_desc">Sei alla ricerca di un salone di Coiffure a Bellinzona che unisca professionalità, stile e attenzione ai dettagli?</p>
           <div class="rating reveal">
             <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
             <span class="rating-value" id="rating-value">4.9</span>
             <span class="rating-count" id="rating-count">(11 recensioni)</span>
-            <a href="https://search.google.com/local/writereview?placeid=INSERISCI_IL_PLACE_ID" target="_blank" rel="noopener" style="margin-left:8px;font-size:0.75rem;color:var(--primary);opacity:0.7;">Scrivi una recensione</a>
+            <a href="https://search.google.com/local/writereview?placeid=INSERISCI_IL_PLACE_ID" target="_blank" rel="noopener" style="margin-left:8px;font-size:0.75rem;color:var(--primary);opacity:0.7;" data-i18n="about_reviews">Scrivi una recensione</a>
           </div>
           <div class="status-badge" id="status-badge">
-            <span class="dot"></span> <span id="status-text">Caricamento...</span>
+            <span class="dot"></span> <span id="status-text" data-i18n="about_loading">Caricamento...</span>
           </div>
           <div class="about-features">
             <div class="about-feature reveal">
-              <h4>Taglio su misura</h4>
-              <p>Ogni taglio è pensato per valorizzare la tua unicità e personalità.</p>
+              <h4 data-i18n="feature1_title">Taglio su misura</h4>
+              <p data-i18n="feature1_desc">Ogni taglio è pensato per valorizzare la tua unicità e personalità.</p>
             </div>
             <div class="about-feature reveal">
-              <h4>Colore creativo</h4>
-              <p>Dai naturali ai più audaci, il tuo colore ideale ti aspetta.</p>
+              <h4 data-i18n="feature2_title">Colore creativo</h4>
+              <p data-i18n="feature2_desc">Dai naturali ai più audaci, il tuo colore ideale ti aspetta.</p>
             </div>
             <div class="about-feature reveal">
-              <h4>Matrimoni & eventi</h4>
-              <p>Acconciature e make-up per rendere il tuo giorno indimenticabile.</p>
+              <h4 data-i18n="feature3_title">Matrimoni & eventi</h4>
+              <p data-i18n="feature3_desc">Acconciature e make-up per rendere il tuo giorno indimenticabile.</p>
             </div>
             <div class="about-feature reveal">
-              <h4>Nails</h4>
-              <p>Unghie eleganti e resistenti con gel semipermanente.</p>
+              <h4 data-i18n="feature4_title">Nails</h4>
+              <p data-i18n="feature4_desc">Unghie eleganti e resistenti con gel semipermanente.</p>
             </div>
           </div>
         </div>
@@ -106,44 +117,44 @@
   <section class="section services" id="services">
     <div class="container">
       <div class="services-header reveal">
-        <div class="section-label">I nostri servizi</div>
-        <h2 class="section-title">Il tuo stile, la nostra passione</h2>
-        <p class="section-sub">Taglio, colore, trattamenti, extensions, styling e nails — scopri tutti i nostri servizi e prezzi.</p>
+        <div class="section-label" data-i18n="services_label">I nostri servizi</div>
+        <h2 class="section-title" data-i18n="services_title">Il tuo stile, la nostra passione</h2>
+        <p class="section-sub" data-i18n="services_desc">Taglio, colore, trattamenti, extensions, styling e nails — scopri tutti i nostri servizi e prezzi.</p>
       </div>
       <div class="services-grid">
         <div class="service-card reveal">
-          <h3>Taglio & Styling</h3>
-          <p>Piega, pettinata, raccolti, piastra e babyliss. Per ogni esigenza e occasione.</p>
-          <span class="price"><a href="listing/listino.html">Vedi listino →</a></span>
+          <h3 data-i18n="service1_title">Taglio & Styling</h3>
+          <p data-i18n="service1_desc">Piega, pettinata, raccolti, piastra e babyliss.</p>
+          <span class="price"><a href="listing/listino.html" data-i18n="view_price">Vedi listino →</a></span>
         </div>
         <div class="service-card reveal">
-          <h3>Colore & Mèches</h3>
-          <p>Colorazione classica, tonalizzante, mèches, balayage e ritocchi.</p>
-          <span class="price"><a href="listing/listino.html">Vedi listino →</a></span>
+          <h3 data-i18n="service2_title">Colore & Mèches</h3>
+          <p data-i18n="service2_desc">Colorazione classica, tonalizzante, mèches, balayage e ritocchi.</p>
+          <span class="price"><a href="listing/listino.html" data-i18n="view_price">Vedi listino →</a></span>
         </div>
         <div class="service-card reveal">
-          <h3>Trattamenti</h3>
-          <p>Decolorazioni, stiratura classica e keratina, permanente e prodotti Keune.</p>
-          <span class="price"><a href="listing/listino.html">Vedi listino →</a></span>
+          <h3 data-i18n="service3_title">Trattamenti</h3>
+          <p data-i18n="service3_desc">Decolorazioni, stiratura classica e keratina, permanente e prodotti Keune.</p>
+          <span class="price"><a href="listing/listino.html" data-i18n="view_price">Vedi listino →</a></span>
         </div>
         <div class="service-card reveal">
-          <h3>Extensions & Parrucche</h3>
-          <p>Ciocchette, fasce e parrucche per un look da sogno.</p>
-          <span class="price"><a href="listing/listino.html">Vedi listino →</a></span>
+          <h3 data-i18n="service4_title">Extensions & Parrucche</h3>
+          <p data-i18n="service4_desc">Ciocchette, fasce e parrucche per un look da sogno.</p>
+          <span class="price"><a href="listing/listino.html" data-i18n="view_price">Vedi listino →</a></span>
         </div>
         <div class="service-card reveal">
-          <h3>Uomo & Bambino</h3>
-          <p>Taglio uomo, macchinetta, torni e taglio bambini/studenti.</p>
-          <span class="price"><a href="listing/listino.html">Vedi listino →</a></span>
+          <h3 data-i18n="service5_title">Uomo & Bambino</h3>
+          <p data-i18n="service5_desc">Taglio uomo, macchinetta, torni e taglio bambini/studenti.</p>
+          <span class="price"><a href="listing/listino.html" data-i18n="view_price">Vedi listino →</a></span>
         </div>
         <div class="service-card reveal">
-          <h3>Nails</h3>
-          <p>Manicure, semipermanente, refill, ricostruzione, pedicure e nail art.</p>
-          <span class="price"><a href="listing/listino.html">Vedi listino →</a></span>
+          <h3 data-i18n="service6_title">Nails</h3>
+          <p data-i18n="service6_desc">Manicure, semipermanente, refill, ricostruzione, pedicure e nail art.</p>
+          <span class="price"><a href="listing/listino.html" data-i18n="view_price">Vedi listino →</a></span>
         </div>
       </div>
       <div style="text-align:center;margin-top:48px;" class="reveal">
-        <a href="listing/listino.html" class="btn btn-primary">Scopri il listino completo</a>
+        <a href="listing/listino.html" class="btn btn-primary" data-i18n="view_full_price">Scopri il listino completo</a>
       </div>
     </div>
   </section>
@@ -152,47 +163,54 @@
   <section class="section" id="gallery">
     <div class="container">
       <div class="services-header reveal">
-        <div class="section-label">Galleria</div>
-        <h2 class="section-title">I nostri lavori</h2>
-        <p class="section-sub">Scopri alcuni dei nostri tagli, colori e acconciature. Ogni foto racconta la cura e la passione che mettiamo nel nostro lavoro.</p>
+        <div class="section-label" data-i18n="gallery_label">Galleria</div>
+        <h2 class="section-title" data-i18n="gallery_title">I nostri lavori</h2>
+        <p class="section-sub" data-i18n="gallery_desc">Scopri alcuni dei nostri tagli, colori e acconciature.</p>
       </div>
     </div>
     <div class="gallery-grid reveal">
       <div class="gallery-item">
         <img src="https://dynl.mktgcdn.com/p/FhHhtbMGb0-uVaI-qkRZek_qgnRWczvoHkglqqKq4IE/319x398" alt="Lavoro Tocco Magico" loading="lazy">
-        <div class="gallery-overlay"><span>Vedi</span></div>
+        <div class="gallery-overlay"><span data-i18n="gallery_view">Vedi</span></div>
       </div>
+      <div class="gallery-sep"><span class="line-v"></span><span class="dot"></span><span class="line-v"></span></div>
       <div class="gallery-item">
         <img src="https://dynl.mktgcdn.com/p/4TZwJCbxFZ0qA1I7cMRZ8Tw2Z-pxts2nR5E-XzLLUUE/319x398" alt="Lavoro Tocco Magico" loading="lazy">
-        <div class="gallery-overlay"><span>Vedi</span></div>
+        <div class="gallery-overlay"><span data-i18n="gallery_view">Vedi</span></div>
       </div>
+      <div class="gallery-sep diamond"><span class="dot"></span></div>
       <div class="gallery-item">
         <img src="https://dynl.mktgcdn.com/p/w5ENc8GAFLVdrybR_fSNjZErNFAuyawOXEDO6qcEbIg/319x398" alt="Lavoro Tocco Magico" loading="lazy">
-        <div class="gallery-overlay"><span>Vedi</span></div>
+        <div class="gallery-overlay"><span data-i18n="gallery_view">Vedi</span></div>
       </div>
+      <div class="gallery-sep"><span class="line-v"></span><span class="dot"></span><span class="line-v"></span></div>
       <div class="gallery-item">
         <img src="https://dynl.mktgcdn.com/p/6UC7vVUQbmmdZF2CjWs6V4t_3s6GYu_rydhJOqB67To/319x398" alt="Lavoro Tocco Magico" loading="lazy">
-        <div class="gallery-overlay"><span>Vedi</span></div>
+        <div class="gallery-overlay"><span data-i18n="gallery_view">Vedi</span></div>
       </div>
+      <div class="gallery-sep diamond"><span class="dot"></span></div>
       <div class="gallery-item">
         <img src="https://dynl.mktgcdn.com/p/4D4pxnuZqrVSds1Gk0_4CukVOzRra25wMnx5yalaW6A/319x398" alt="Lavoro Tocco Magico" loading="lazy">
-        <div class="gallery-overlay"><span>Vedi</span></div>
+        <div class="gallery-overlay"><span data-i18n="gallery_view">Vedi</span></div>
       </div>
+      <div class="gallery-sep"><span class="line-v"></span><span class="dot"></span><span class="line-v"></span></div>
       <div class="gallery-item">
         <img src="https://dynl.mktgcdn.com/p/5WipnbqepuqNqTnZLGFgwyig-pY-iYlsQey7joVyKLI/319x398" alt="Lavoro Tocco Magico" loading="lazy">
-        <div class="gallery-overlay"><span>Vedi</span></div>
+        <div class="gallery-overlay"><span data-i18n="gallery_view">Vedi</span></div>
       </div>
+      <div class="gallery-sep diamond"><span class="dot"></span></div>
       <div class="gallery-item">
         <img src="https://dynl.mktgcdn.com/p/6BA_gLi19OKudLqDduOBujXtLmHcENSmFAAsigG9oLE/319x398" alt="Lavoro Tocco Magico" loading="lazy">
-        <div class="gallery-overlay"><span>Vedi</span></div>
+        <div class="gallery-overlay"><span data-i18n="gallery_view">Vedi</span></div>
       </div>
+      <div class="gallery-sep"><span class="line-v"></span><span class="dot"></span><span class="line-v"></span></div>
       <div class="gallery-item">
         <img src="https://dynl.mktgcdn.com/p/1bpkdj7XC5WW0QPNBIePoJnkQEjJDm9asFqRa3nDX-Y/319x398" alt="Lavoro Tocco Magico" loading="lazy">
-        <div class="gallery-overlay"><span>Vedi</span></div>
+        <div class="gallery-overlay"><span data-i18n="gallery_view">Vedi</span></div>
       </div>
     </div>
     <div style="text-align:center;margin-top:40px;" class="reveal">
-      <a href="galleria.html" class="btn btn-primary">Scopri tutta la galleria →</a>
+      <a href="galleria.html" class="btn btn-primary" data-i18n="gallery_all">Scopri tutta la galleria →</a>
     </div>
   </section>
 
@@ -200,9 +218,9 @@
   <section class="section contact" id="contact">
     <div class="container">
       <div class="services-header reveal">
-        <div class="section-label">Contatti</div>
-        <h2 class="section-title">Vieni a trovarci</h2>
-        <p class="section-sub">Siamo a Bellinzona, pronti ad accoglierti con professionalità e calore.</p>
+        <div class="section-label" data-i18n="contact_label">Contatti</div>
+        <h2 class="section-title" data-i18n="contact_title">Vieni a trovarci</h2>
+        <p class="section-sub" data-i18n="contact_desc">Siamo a Bellinzona, pronti ad accoglierti con professionalità e calore.</p>
       </div>
       <div class="contact-grid">
         <div class="contact-info reveal">
@@ -211,7 +229,7 @@
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
             </div>
             <div class="text">
-              <h4>Indirizzo</h4>
+              <h4 data-i18n="contact_address">Indirizzo</h4>
               <p>Via Camminata 6, 6500 Bellinzona</p>
             </div>
           </div>
@@ -220,7 +238,7 @@
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             </div>
             <div class="text">
-              <h4>Telefono</h4>
+              <h4 data-i18n="contact_phone">Telefono</h4>
               <p><a href="tel:+41918251918">+41 91 825 19 18</a></p>
               <p><a href="tel:+41918251904">+41 91 825 19 04</a></p>
             </div>
@@ -230,12 +248,12 @@
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
             </div>
             <div class="text">
-              <h4>Lingue parlate</h4>
-              <p>Italiano, Francese, Tedesco, Inglese, Serbo-croato</p>
+              <h4 data-i18n="contact_languages">Lingue parlate</h4>
+              <p data-i18n="contact_languages_list">Italiano, Francese, Tedesco, Inglese, Serbo-croato</p>
             </div>
           </div>
           <div class="payment-methods">
-            <h4>Metodi di pagamento</h4>
+            <h4 data-i18n="contact_payment">Metodi di pagamento</h4>
             <div class="payment-icons">
               <img src="https://bin.staticlocal.ch/publishers-logo-provider/CASH.svg" alt="CASH">
               <img src="https://bin.staticlocal.ch/publishers-logo-provider/TWINT.svg" alt="TWINT">
@@ -254,43 +272,43 @@
           </div>
         </div>
         <div class="contact-hours reveal">
-          <h3>Orari di apertura</h3>
+          <h3 data-i18n="contact_hours">Orari di apertura</h3>
           <div class="hours-row">
-            <span class="day">Lunedì</span>
+            <span class="day" data-i18n="day_mon">Lunedì</span>
             <span class="time">08:30 – 18:00</span>
           </div>
           <div class="hours-row">
-            <span class="day">Martedì</span>
+            <span class="day" data-i18n="day_tue">Martedì</span>
             <span class="time">08:30 – 18:30</span>
           </div>
           <div class="hours-row">
-            <span class="day">Mercoledì</span>
+            <span class="day" data-i18n="day_wed">Mercoledì</span>
             <span class="time">08:30 – 18:30</span>
           </div>
           <div class="hours-row">
-            <span class="day">Giovedì</span>
+            <span class="day" data-i18n="day_thu">Giovedì</span>
             <span class="time">08:30 – 18:30</span>
           </div>
           <div class="hours-row">
-            <span class="day">Venerdì</span>
+            <span class="day" data-i18n="day_fri">Venerdì</span>
             <span class="time">08:30 – 18:30</span>
           </div>
           <div class="hours-row">
-            <span class="day">Sabato</span>
+            <span class="day" data-i18n="day_sat">Sabato</span>
             <span class="time">08:30 – 16:00</span>
           </div>
           <div class="hours-row">
-            <span class="day">Domenica</span>
-            <span class="time closed">Chiuso</span>
+            <span class="day" data-i18n="day_sun">Domenica</span>
+            <span class="time closed" data-i18n="closed">Chiuso</span>
           </div>
           <div class="hours-row">
-            <span class="day note">Giovedì sera</span>
-            <span class="time note">18:30 – 20:30 (solo su appuntamento)</span>
+            <span class="day note" data-i18n="thu_evening">Giovedì sera</span>
+            <span class="time note" data-i18n="thu_evening_time">18:30 – 20:30 (solo su appuntamento)</span>
           </div>
         </div>
       </div>
       <div class="notice-banner reveal">
-        <p>In caso di mancata disdetta con almeno 24h di anticipo, verrà addebitato il 50% del costo del servizio. Reclami entro 48 ore.</p>
+        <p data-i18n="notice">In caso di mancata disdetta con almeno 24h di anticipo, verrà addebitato il 50% del costo del servizio. Reclami entro 48 ore.</p>
       </div>
     </div>
   </section>
@@ -308,15 +326,15 @@
         </a>
       </div>
       <div class="footer-links">
-        <a href="#hero">Home</a>
-        <a href="#about">Chi siamo</a>
-        <a href="#services">Servizi</a>
-        <a href="#services">Listino</a>
-        <a href="#gallery">Galleria</a>
-        <a href="#contact">Contatti</a>
+        <a href="#hero" data-i18n="footer_home">Home</a>
+        <a href="#about" data-i18n="footer_about">Chi siamo</a>
+        <a href="#services" data-i18n="footer_services">Servizi</a>
+        <a href="#services" data-i18n="footer_price">Listino</a>
+        <a href="#gallery" data-i18n="footer_gallery">Galleria</a>
+        <a href="#contact" data-i18n="footer_contact">Contatti</a>
       </div>
-      <p style="margin-top:16px;font-size:0.75rem;color:var(--beige-dark);opacity:0.6;">&copy; 2026 Tocco Magico Coiffure — Tutti i diritti riservati</p>
-      <p style="margin-top:8px;font-size:0.7rem;color:var(--beige-dark);opacity:0.4;">Sito creato da <a href="https://thelight.ch" target="_blank" rel="noopener" style="color:var(--primary);opacity:0.7;">TheLight</a></p>
+      <p style="margin-top:16px;font-size:0.75rem;color:var(--beige-dark);opacity:0.6;">&copy; 2026 Tocco Magico Coiffure — <span data-i18n="footer_rights">Tutti i diritti riservati</span></p>
+      <p style="margin-top:8px;font-size:0.7rem;color:var(--beige-dark);opacity:0.4;"><span data-i18n="footer_credit">Sito creato da</span> <a href="https://thelight.ch" target="_blank" rel="noopener" style="color:var(--primary);opacity:0.7;">TheLight</a></p>
     </div>
   </footer>
 
@@ -326,62 +344,8 @@
     <img src="" alt="Lightbox">
   </div>
 
+  <script src="assets/js/lang.js"></script>
   <script src="assets/js/script.js"></script>
   <script src="assets/js/reviews.js"></script>
-  <script>
-  (function() {
-    const badge = document.getElementById('status-badge');
-    const text = document.getElementById('status-text');
-    if (!badge || !text) return;
-    const now = new Date();
-    const day = now.getDay();
-    const min = now.getHours() * 60 + now.getMinutes();
-    const hours = [
-      null,
-      [8*60+30, 18*60],
-      [8*60+30, 18*60+30],
-      [8*60+30, 18*60+30],
-      [8*60+30, 18*60+30],
-      [8*60+30, 18*60+30],
-      [8*60+30, 16*60],
-    ];
-    const dayNames = ['Domenica','Lunedì','Martedì','Mercoledì','Giovedì','Venerdì','Sabato'];
-    if (day === 4) {
-      const thuExtraOpen = 18*60+30;
-      const thuExtraClose = 20*60+30;
-      if (min >= thuExtraOpen && min < thuExtraClose) {
-        badge.className = 'status-badge open';
-        text.textContent = 'Aperto — Giovedì sera (solo su appuntamento)';
-        return;
-      }
-    }
-    const today = hours[day];
-    if (!today) {
-      badge.className = 'status-badge closed';
-      text.textContent = 'Chiuso — Apre domani (Lunedì) alle 08:30';
-      return;
-    }
-    const [open, close] = today;
-    if (min >= open && min < close) {
-      badge.className = 'status-badge open';
-      const closeH = Math.floor(close / 60);
-      const closeM = String(close % 60).padStart(2, '0');
-      text.textContent = 'Aperto — Chiude alle ' + closeH + ':' + closeM;
-    } else {
-      badge.className = 'status-badge closed';
-      let nextDay = day;
-      let nextOpen = null;
-      for (let i = 1; i <= 7; i++) {
-        const d = (day + i) % 7;
-        if (hours[d]) { nextDay = d; nextOpen = hours[d][0]; break; }
-      }
-      const nextName = dayNames[nextDay === 0 ? 7 : nextDay];
-      const nextH = Math.floor(nextOpen / 60);
-      const nextM = String(nextOpen % 60).padStart(2, '0');
-      const diff = (nextDay === (day + 1) % 7) ? 'domani' : nextName;
-      text.textContent = 'Chiuso — Apre ' + diff + ' alle ' + nextH + ':' + nextM;
-    }
-  })();
-  </script>
 </body>
 </html>

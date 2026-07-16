@@ -353,6 +353,21 @@
 
   footer .social-links a:hover { color: var(--primary); }
 
+  /* ── LANG SELECTOR ── */
+  .lang-selector { display:flex; gap:4px; align-items:center; justify-content:center; margin-top:20px; }
+  .lang-btn {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    padding: 5px 10px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .lang-btn:hover { border-color: var(--primary); color: var(--primary); }
+  .lang-btn.active { background: rgba(201,169,110,0.15); border-color: var(--primary); color: var(--primary); }
+
   /* ── RESPONSIVE ── */
   @media (max-width: 768px) {
     header h1 { font-size: 2.2rem; }
@@ -372,24 +387,25 @@
 <header>
   <a href="index.html#gallery" class="back-link">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5"/><polyline points="12 19 5 12 12 5"/></svg>
-    Torna al sito
+    <span data-i18n="gallery_back">Torna al sito</span>
   </a>
   <img src="IMG/logo-gold.png" alt="Tocco Magico" class="logo-sm">
-  <h1>Galleria Foto</h1>
+  <h1 data-i18n="gallery_page_title">Galleria Foto</h1>
   <span class="section-divider"></span>
-  <p>Tocco Magico Coiffure</p>
+  <p data-i18n="gallery_subtitle">Tocco Magico Coiffure</p>
+  <div class="lang-selector"></div>
 </header>
 
 <!-- FOTO IN EVIDENZA -->
 <section class="featured">
-  <h2 class="section-title">In Evidenza</h2>
-  <p class="section-subtitle">Una selezione delle nostre immagini preferite</p>
+  <h2 class="section-title" data-i18n="gallery_featured_title">In Evidenza</h2>
+  <p class="section-subtitle" data-i18n="gallery_featured_desc">Una selezione delle nostre immagini preferite</p>
 
   <div class="card">
     <img src="IMG/tramonto-01.jpg" alt="Tramonto dorato">
     <div class="card-text">
-      <h3>Tramonto Dorato</h3>
-      <p>Il cielo si accende di arancione e oro mentre il sole scende oltre l'orizzonte.
+      <h3 data-i18n="gallery_card1_title">Tramonto Dorato</h3>
+      <p data-i18n="gallery_card1_desc">Il cielo si accende di arancione e oro mentre il sole scende oltre l'orizzonte.
          Un momento di pace assoluta, dove il tempo sembra fermarsi e il mondo
          diventa un dipinto vivente.</p>
     </div>
@@ -404,8 +420,8 @@
   <div class="card">
     <img src="IMG/mare-azzurro-04.jpg" alt="Mare azzurro">
     <div class="card-text">
-      <h3>Mare Azzurro Infinito</h3>
-      <p>L'acqua cristallina si fonde con il cielo in un infinito di blu.
+      <h3 data-i18n="gallery_card2_title">Mare Azzurro Infinito</h3>
+      <p data-i18n="gallery_card2_desc">L'acqua cristallina si fonde con il cielo in un infinito di blu.
          Il rumore delle onde racconta storie antiche di vento e sale,
          regalando una serenità che solo il mare sa dare.</p>
     </div>
@@ -420,8 +436,8 @@
   <div class="card">
     <img src="IMG/cielo-stellato-10.jpg" alt="Cielo stellato">
     <div class="card-text">
-      <h3>Cielo Stellato</h3>
-      <p>Migliaia di stelle punteggiano il buio della notte come diamanti sparsi
+      <h3 data-i18n="gallery_card3_title">Cielo Stellato</h3>
+      <p data-i18n="gallery_card3_desc">Migliaia di stelle punteggiano il buio della notte come diamanti sparsi
          su velluto nero. Ogni luce è un universo lontano, un promemoria
          di quanto siamo piccoli e quanto sia immenso il cosmo.</p>
     </div>
@@ -436,8 +452,8 @@
   <div class="card">
     <img src="IMG/bosco-verde-08.jpg" alt="Bosco verde">
     <div class="card-text">
-      <h3>Nel Cuore del Bosco</h3>
-      <p>I raggi di sole filtrano tra le fronde, creando danze di luce e ombra
+      <h3 data-i18n="gallery_card4_title">Nel Cuore del Bosco</h3>
+      <p data-i18n="gallery_card4_desc">I raggi di sole filtrano tra le fronde, creando danze di luce e ombra
          sul sentiero. L'aria profuma di muschio e terra bagnata,
          un rifugio naturale lontano dal rumore del mondo.</p>
     </div>
@@ -446,7 +462,7 @@
 
 <!-- GRIGLIA TUTTE LE FOTO -->
 <section class="grid-section">
-  <h2 class="section-title">Tutte le Foto</h2>
+  <h2 class="section-title" data-i18n="gallery_grid_title">Tutte le Foto</h2>
   <span class="section-divider"></span>
   <div class="grid" id="grid"></div>
 </section>
@@ -468,16 +484,16 @@
     </a>
   </div>
   <div class="footer-links">
-    <a href="index.html">Home</a>
-    <a href="index.html#about">Chi siamo</a>
-    <a href="index.html#services">Servizi</a>
-    <a href="listing/listino.html">Listino</a>
-    <a href="index.html#gallery">Galleria</a>
-    <a href="index.html#contact">Contatti</a>
+    <a href="index.html" data-i18n="footer_home">Home</a>
+    <a href="index.html#about" data-i18n="footer_about">Chi siamo</a>
+    <a href="index.html#services" data-i18n="footer_services">Servizi</a>
+    <a href="listing/listino.html" data-i18n="footer_price">Listino</a>
+    <a href="index.html#gallery" data-i18n="footer_gallery">Galleria</a>
+    <a href="index.html#contact" data-i18n="footer_contact">Contatti</a>
   </div>
   <p>Via Camminata 6, 6500 Bellinzona — +41 91 825 19 18</p>
-  <p style="opacity:0.5;">&copy; 2026 Tocco Magico Coiffure — Tutti i diritti riservati</p>
-  <p style="margin-top:8px;font-size:0.7rem;opacity:0.4;">Sito creato da <a href="https://thelight.ch" target="_blank" rel="noopener" style="color:var(--primary);opacity:0.7;">TheLight</a></p>
+  <p style="opacity:0.5;" data-i18n="footer_rights_copy">&copy; 2026 Tocco Magico Coiffure — Tutti i diritti riservati</p>
+  <p style="margin-top:8px;font-size:0.7rem;opacity:0.4;"><span data-i18n="footer_credit">Sito creato da</span> <a href="https://thelight.ch" target="_blank" rel="noopener" style="color:var(--primary);opacity:0.7;">TheLight</a></p>
 </footer>
 
 <script>
@@ -552,5 +568,6 @@
   buildBgScroll();
   buildGrid();
 </script>
+<script src="assets/js/lang.js"></script>
 </body>
 </html>
