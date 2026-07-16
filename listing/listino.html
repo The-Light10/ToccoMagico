@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tocco Magico Coiffure — Listino Prezzi</title>
+  <meta name="description" content="Listino prezzi completo Tocco Magico Coiffure Bellinzona: taglio, colore, trattamenti, extensions, uomo, bambino.">
+  <link rel="icon" type="image/png" href="../IMG/favicon.png">
+  <link rel="apple-touch-icon" href="../IMG/favicon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    .price-header {
+      padding-top: 140px;
+      padding-bottom: 60px;
+      background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%);
+      text-align: center;
+    }
+    .price-header h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--light);
+    }
+    .price-header .subtitle {
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--primary);
+    }
+    .price-content {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+    .price-section-title {
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--primary);
+      text-align: center;
+      margin: 48px 0 24px;
+    }
+    .price-table {
+      background: var(--dark);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+    .price-table-title {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      color: var(--light);
+      padding: 16px 24px;
+      background: rgba(139, 125, 114, 0.08);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .price-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 24px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      transition: var(--transition);
+    }
+    .price-row:last-child { border-bottom: none; }
+    .price-row:hover { background: rgba(139, 125, 114, 0.05); }
+    .price-row .name {
+      font-size: 0.9rem;
+      color: var(--beige);
+      font-weight: 400;
+    }
+    .price-row .amount {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      color: var(--primary);
+      font-weight: 600;
+      white-space: nowrap;
+      margin-left: 16px;
+    }
+    .price-row .name .sub {
+      display: block;
+      font-size: 0.78rem;
+      color: var(--beige-dark);
+      font-style: italic;
+      margin-top: 2px;
+    }
+    .price-row.note .name {
+      color: var(--beige-dark);
+      font-style: italic;
+      font-size: 0.85rem;
+    }
+    .price-row.note .amount {
+      font-style: italic;
+      font-weight: 400;
+    }
+    .price-note {
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--beige-dark);
+      font-weight: 300;
+      margin-top: 32px;
+      line-height: 1.8;
+    }
+
+    .category-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+    .category-nav a {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: var(--beige-dark);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 8px 18px;
+      border-radius: 50px;
+      transition: var(--transition);
+    }
+    .category-nav a:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      background: rgba(139,125,114,0.08);
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header" id="header">
+    <div class="container">
+      <nav class="nav">
+        <ul class="nav-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../index.html#about">Info</a></li>
+          <li><a href="listino.html">Listino</a></li>
+          <li><a href="../index.html#gallery">Galleria</a></li>
+          <li><a href="../index.html#contact">Contatti</a></li>
+        </ul>
+        <button class="menu-toggle" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <section class="price-header">
+    <div class="container">
+      <div class="subtitle">Tocco Magico Coiffure</div>
+      <h1>Listino Prezzi</h1>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:20px;">
+    <div class="price-content">
+
+      <nav class="category-nav reveal">
+        <a href="#donna">Donna</a>
+        <a href="#uomo">Uomo</a>
+        <a href="#bambino">Bambino</a>
+        <a href="#trattamenti">Trattamenti</a>
+        <a href="#keune">Prodotti Keune</a>
+      </nav>
+
+      <!-- ==================== DONNA ==================== -->
+      <div class="price-section-title" id="donna">Donna</div>
+
+      <!-- TAGLIO & FINISH -->
+      <div class="price-table reveal">
+        <div class="price-table-title">Taglio & Finish</div>
+        <div class="price-row">
+          <span class="name">Taglio donna</span>
+          <span class="amount">CHF 48</span>
+        </div>
+        <div class="price-row">
+          <span class="name">Taglio cortissimo donna + piega</span>
+          <span class="amount">CHF 59</span>
+        </div>
+        <div class="price-row">
+          <span class="name">Taglio frangia</span>
+          <span class="amount">CHF 12</span>
+        </div>
+      </div>
+
+      <!-- STYLING — PIEGA -->
+      <div class="price-table reveal">
+        <div class="price-table-title">Piega</div>
+        <div class="price-row">
+          <span class="name">Capelli corti</span>
+          <span class="amount">CHF 42</span>
+        </div>
+        <div class="price-row">
+          <span class="name">Capelli medi</span>
+          <span class="amount">CHF 47</span>
+        </div>
+        <div class="price-row">
+          <span class="name">Capelli lunghi</span>
+          <span class="amount">CHF 52</span>
+        </div>
+        <div class="price-row">
+          <span class="name">Lunga plus</span>
+          <span class="amount">CHF 57</span>
+        </div>
+      </div>
+
+      <!-- STYLING — ASCIUGATURA VELOCE -->
+      <div class="price-table reveal">
+        <div class="price-table-title">Asciugatura veloce</div>
+        <div class="price-row">
+          <span class="name">Capelli medi</span>
+          <span class="amount">CHF 23</span>
+        </div>
+        <div class="price-row">
+          <span class="name">Capelli lunghi</span>
+          <span class="amount">CHF 37</span>
+        </div>
+      </div>
+
+      <!-- STYLING — PETTINATA / PIASTRA / BABYLISS -->
+      <div class="price-table reveal">
+        <div class="price-table-title">Pettinata · Piastra · Babyliss</div>
+        <div class="price-row">
+          <span class="name">Capelli medi</span>
+          <span class="amount">CHF 23</span>
+        </div>
+        <div class="price-row">
+          <span class="name">Capelli lunghi</span>
+          <span class="amount">CHF 37</span>
+        </div>
+      </div>
+
+      <!-- RACCOLTO SERA / SPOSA -->
+      <div class="price-table reveal">
+        <div class="price-table-title">Raccolto sera · Sposa</div>
+        <div class="price-row">
+          <span class="name">Semplice</span>
+          <span class="amount">CHF 90</span>
+        </div>
+        <div class="price-row">
+          <span class="name">Elaborata</span>
+          <span class="amount">CHF 180</span>
+        </div>
+        <div class="price-row">
+          <span class="name">Molto elaborata</span>
+          <span class="amount">CHF 270</span>
+        </div>
+        <div class="price-row note">
+          <span class="name">Prova 1 ora</span>
+          <span class="amount">CHF 100</span>
+        </div>
+        <div class="price-row note">
+          <span class="name">Ogni 30 minuti in aggiunta</span>
+          <span class="amount">CHF 60</span>
+        </div>
+      </div>
+
+      <!-- EXTENSIONS & PARRUCCA -->
+      <div class="price-table reveal">
+        <div class="price-table-title">Extensions & Parrucca</div>
+        <div class="price-row">
+          <span class="name">Extensions ciocchetta</span>
+          <span class="amount">CHF 10</span>
+        </div>
+        <div class="price-row">
+          <span class="name">Extensions fascia media</span>
+          <span class="amount">CHF 120</span>
+        </div>
+        <div class="price-row">
+          <span class="name">Extensions fascia lunga</span>
+          <span class="amount">CHF 230</span>
+        </div>
+        <div class="price-row">
+          <span class="name">Parrucche</span>
+          <span class="amount">Su consulenza</span>
+        </div>
+      </div>
+
+      <!-- ==================== COLORAZIONE & PERMANENTE ==================== -->
+      <div class="price-section-title" id="colori">Colorazione & Permanente</div>
+
+      <!-- COLORAZIONE CLASSICA -->
+      <div class="price-table reveal">
+        <div class="price-table-title">Colorazione classica</div>
+        <div class="price-row">
+          <span class="name">Solo radice</span>
+          <span class="amount">CHF 69</span>
+        </div>
+        <div class="price-row">
+          <span class="name">Radice + lunghezze</span>
+          <span class="amount">CHF 79</span>
+        </div>
+      </div>
+
+      <!-- COLORAZIONE NATURALE VEGAN -->
+      <div class="price-table reveal">
+        <div class="price-table-title">Colorazione naturale vegan</div>
+        <div class="price-row">
+          <span class="name">Solo radice</span>
+          <span class="amount">CHF 72</span>
+        </div>
+        <div class="price-row">
+          <span class="name">Radice + lunghezze</span>
+          <span class="amount">CHF 82</span>
+        </div>
+      </div>
+
+      <!-- RITOCCO COLORE -->
+      <div class="price-table reveal">
+        <div class="price-table-title">Ritocco colore</div>
+        <div class="price-row">
+          <span class="name">Ritocco colore</span>
+          <span class="amount">CHF 51</span>
+        </div>
+      </div>
+
+      <!-- TONALIZZANTE -->
+      <div class="price-table reveal">
+        <div class="price-table-title">Tonalizzante</div>
+        <div class="price-row">
+          <span class="name">Capelli corti</span>
+          <span class="amount">CHF 40</span>
+        </div>
+        <div class="price-row">
+          <span class="name">Capelli medi</span>
+          <span class="amount">CHF 45</span>
+        </div>
+        <div class="price-row">
+          <span class="name">Capelli lunghi</span>
+          <span class="amount">CHF 50</span>
+        </div>
+      </div>
+
+      <!-- MÈCHES -->
+      <div class="price-table reveal">
+        <div class="price-table-title">Mèches</div>
+        <div class="price-row">
+          <span class="name">Capelli corti</span>
+          <span class="amount">CHF 90</span>
+        </div>
+        <div class="price-row">
+          <span class="name">Capelli medi</span>
+          <span class="amount">CHF 125</span>
+        </div>
+        <div class="price-row">
+          <span class="name">Capelli lunghi</span>
+          <span class="amount">CHF 170</span>
+        </div>
+      </div>
+
+      <!-- RITOCCO MÈCHES -->
+      <div class="price-table reveal">
+        <div class="price-table-title">Ritocco mèches</div>
+        <div class="price-row">
+          <span class="name">Effetto leggero</span>
+          <span class="amount">CHF 69</span>
+        </div>
+        <div class="price-row">
+          <span class="name">Effetto pieno</span>
+          <span class="amount">CHF 89</span>
+        </div>
+      </div>
+
+      <!-- BALAYAGE -->
+      <div class="price-table reveal">
+        <div class="price-table-title">Balayage</div>
+        <div class="price-row">
+          <span class="name">Capelli corti</span>
+          <span class="amount">CHF 160</span>
+        </div>
+        <div class="price-row">
+          <span class="name">Capelli medi</span>
+          <span class="amount">CHF 260</span>
+        </div>
+        <div class="price-row">
+          <span class="name">Capelli lunghi</span>
+          <span class="amount">CHF 360</span>
+        </div>
+      </div>
+
+      <!-- RITOCCO BALAYAGE -->
+      <div class="price-table reveal">
+        <div class="price-table-title">Ritocco balayage</div>
+        <div class="price-row">
+          <span class="name">Effetto contouring</span>
+          <span class="amount">CHF 255</span>
+        </div>
+        <div class="price-row">
+          <span class="name">Effetto leggero</span>
+          <span class="amount">CHF 355</span>
+        </div>
+        <div class="price-row">
+          <span class="name">Effetto pieno</span>
+          <span class="amount">CHF 455</span>
+        </div>
+      </div>
+
+      <!-- ==================== TRATTAMENTI & DECOLORAZIONI ==================== -->
+      <div class="price-section-title">Trattamenti & Decolorazioni</div>
+
+      <div class="price-table reveal">
+        <div class="price-table-title">Trattamenti</div>
+        <div class="price-row">
+          <span class="name">Pulizia colore</span>
+          <span class="amount">CHF 100</span>
+        </div>
+        <div class="price-row">
+          <span class="name">Pre-pigmentazione</span>
+          <span class="amount">CHF 121</span>
+        </div>
+        <div class="price-row">
+          <span class="name">Decolorazione solo radice</span>
+          <span class="amount">CHF 146</span>
+        </div>
+        <div class="price-row">
+          <span class="name">Decolorazione radice + lunghezze</span>
+          <span class="amount">Su consulenza</span>
+        </div>
+      </div>
+
+      <!-- STIRATURA CLASSICA -->
+      <div class="price-table reveal">
+        <div class="price-table-title">Stiratura classica</div>
+        <div class="price-row">
+          <span class="name">Capelli corti</span>
+          <span class="amount">CHF 160</span>
+        </div>
+        <div class="price-row">
+          <span class="name">Capelli medi</span>
+          <span class="amount">CHF 260</span>
+        </div>
+        <div class="price-row">
+          <span class="name">Capelli lunghi</span>
+          <span class="amount">CHF 360</span>
+        </div>
+      </div>
+
+      <!-- STIRATURA KERATINA -->
+      <div class="price-table reveal">
+        <div class="price-table-title">Stiratura keratina</div>
+        <div class="price-row">
+          <span class="name">Capelli corti</span>
+          <span class="amount">CHF 255</span>
+        </div>
+        <div class="price-row">
+          <span class="name">Capelli medi</span>
+          <span class="amount">CHF 355</span>
+        </div>
+        <div class="price-row">
+          <span class="name">Capelli lunghi</span>
+          <span class="amount">CHF 455</span>
+        </div>
+      </div>
+
+      <!-- PERMANENTE -->
+      <div class="price-table reveal">
+        <div class="price-table-title">Permanente</div>
+        <div class="price-row">
+          <span class="name">Capelli corti</span>
+          <span class="amount">Su consulenza</span>
+        </div>
+        <div class="price-row">
+          <span class="name">Capelli medi</span>
+          <span class="amount">Su consulenza</span>
+        </div>
+        <div class="price-row">
+          <span class="name">Capelli lunghi</span>
+          <span class="amount">Su consulenza</span>
+        </div>
+      </div>
+
+      <!-- ==================== UOMO ==================== -->
+      <div class="price-section-title" id="uomo">Uomo</div>
+
+      <div class="price-table reveal">
+        <div class="price-table-title">Taglio & Styling uomo</div>
+        <div class="price-row">
+          <span class="name">Taglio uomo</span>
+          <span class="amount">CHF 42</span>
+        </div>
+        <div class="price-row">
+          <span class="name">Taglio con torni</span>
+          <span class="amount">CHF 22</span>
+        </div>
+        <div class="price-row">
+          <span class="name">Taglio con torni + piega</span>
+          <span class="amount">CHF 30</span>
+        </div>
+        <div class="price-row">
+          <span class="name">Taglio macchinetta</span>
+          <span class="amount">CHF 27</span>
+        </div>
+        <div class="price-row">
+          <span class="name">Piega corti</span>
+          <span class="amount">CHF 19</span>
+        </div>
+        <div class="price-row">
+          <span class="name">Piega lunghi</span>
+          <span class="amount">CHF 39</span>
+        </div>
+        <div class="price-row">
+          <span class="name">Permanente uomo</span>
+          <span class="amount">CHF 80</span>
+        </div>
+      </div>
+
+      <!-- ==================== BAMBINO ==================== -->
+      <div class="price-section-title" id="bambino">Bambino</div>
+
+      <div class="price-table reveal">
+        <div class="price-table-title">Taglio bambino & studente</div>
+        <div class="price-row">
+          <span class="name">Taglio bambino / A<span class="sub">da 0 a 12 anni</span></span>
+          <span class="amount">CHF 27</span>
+        </div>
+        <div class="price-row">
+          <span class="name">Taglio studente<span class="sub">da 13 a 25 anni</span></span>
+          <span class="amount">CHF 37</span>
+        </div>
+        <div class="price-row">
+          <span class="name">Taglio + piega studentessa capelli medi<span class="sub">da 13 a 25 anni</span></span>
+          <span class="amount">CHF 61</span>
+        </div>
+        <div class="price-row">
+          <span class="name">Taglio + piega studentessa capelli lunghi<span class="sub">da 13 a 25 anni</span></span>
+          <span class="amount">CHF 81</span>
+        </div>
+      </div>
+
+      <!-- ==================== TRATTAMENTI KEUNE ==================== -->
+      <div class="price-section-title" id="keune">Prodotti Keune</div>
+
+      <div class="price-table reveal">
+        <div class="price-table-title">Trattamenti Keune</div>
+        <div class="price-row">
+          <span class="name">Shampoo</span>
+          <span class="amount">CHF 6</span>
+        </div>
+        <div class="price-row">
+          <span class="name">Condizionere</span>
+          <span class="amount">CHF 6</span>
+        </div>
+        <div class="price-row">
+          <span class="name">Maschera</span>
+          <span class="amount">CHF 11</span>
+        </div>
+        <div class="price-row">
+          <span class="name">Shampoo e condizionere</span>
+          <span class="amount">CHF 11</span>
+        </div>
+        <div class="price-row">
+          <span class="name">Shampoo e maschera</span>
+          <span class="amount">CHF 16</span>
+        </div>
+        <div class="price-row">
+          <span class="name">Spa Vital Nutrition</span>
+          <span class="amount">CHF 25</span>
+        </div>
+        <div class="price-row">
+          <span class="name">Fiala</span>
+          <span class="amount">CHF 12</span>
+        </div>
+      </div>
+
+      <div class="notice-banner reveal">
+        <p>In caso di mancata disdetta con almeno 24h di anticipo, verrà addebitato il 50% del costo del servizio.</p>
+        <p style="margin-top:8px;">Reclami entro 48 ore.</p>
+      </div>
+
+      <p class="price-note reveal">
+        Tutti i prezzi sono in franchi svizzeri (CHF).<br>
+        Per informazioni e appuntamenti contattaci ai numeri indicati.
+      </p>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Via Camminata 6, 6500 Bellinzona — +41 91 825 19 18 — +41 91 825 19 04</p>
+      <div class="social-links">
+        <a href="https://www.facebook.com/toccomagicocoiffure" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/toccomagicocoiffure" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
+        </a>
+      </div>
+      <div style="margin-top:8px;">
+        <a href="https://www.instagram.com/toccomagicocoiffure" target="_blank" rel="noopener" style="font-size:0.85rem;display:inline-flex;align-items:center;gap:6px;color:var(--beige-dark);">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
+          @toccomagicocoiffure
+        </a>
+      </div>
+      <div class="footer-links">
+        <a href="../">Home</a>
+        <a href="../index.html#services">Servizi</a>
+        <a href="../index.html#contact">Contatti</a>
+      </div>
+      <p style="margin-top:16px;font-size:0.75rem;color:var(--beige-dark);opacity:0.6;">&copy; 2026 Tocco Magico Coiffure — Tutti i diritti riservati</p>
+      <p style="margin-top:8px;font-size:0.7rem;color:var(--beige-dark);opacity:0.4;">Sito creato da <a href="https://thelight.ch" target="_blank" rel="noopener" style="color:var(--primary);opacity:0.7;">TheLight</a></p>
+    </div>
+  </footer>
+
+  <script src="../assets/js/script.js"></script>
+</body>
+</html>
