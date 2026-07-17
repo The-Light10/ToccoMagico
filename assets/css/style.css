@@ -790,9 +790,9 @@ img { max-width: 100%; height: auto; display: block; }
 .contact-bottom {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 32px;
   max-width: 900px;
-  margin: 0 auto 56px;
+  margin: 8px auto 56px;
 }
 
 .contact-hours-card,
