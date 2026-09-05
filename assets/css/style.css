@@ -28,6 +28,7 @@ html {
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body {
@@ -38,6 +39,7 @@ body {
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
+  overflow-x: clip;
 }
 
 ::selection { background: var(--primary); color: var(--dark); }
@@ -45,6 +47,26 @@ body {
 a { color: inherit; text-decoration: none; }
 ul { list-style: none; }
 img { max-width: 100%; height: auto; display: block; }
+
+.contact-card p,
+.contact-card p a,
+.hours-note,
+.why-list li,
+.contact-sub,
+.section-sub,
+.service-card p,
+.about-feature p,
+.hero p,
+.hero-actions .btn,
+.rating {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.contact-card p a {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
 
 .container {
   max-width: 1200px;
