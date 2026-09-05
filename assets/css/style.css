@@ -22,13 +22,21 @@
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { scroll-behavior: smooth; scrollbar-gutter: stable; }
+html {
+  scroll-behavior: smooth;
+  scrollbar-gutter: stable;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
 
 body {
   font-family: var(--font-sans);
   color: var(--light);
   background: var(--dark);
   line-height: 1.7;
+  width: 100%;
+  max-width: 100%;
   overflow-x: hidden;
 }
 
@@ -252,6 +260,10 @@ img { max-width: 100%; height: auto; display: block; }
   align-items: center;
   gap: 60px;
 }
+
+.hero-layout > *,
+.about-grid > *,
+.contact-bottom > * { min-width: 0; }
 
 .hero-logo {
   height: 320px;
@@ -1177,6 +1189,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 @media (max-width: 768px) {
+  body { touch-action: pan-y; }
   .container { padding-left: 18px; padding-right: 18px; }
   .header { padding: 16px 0; }
 
