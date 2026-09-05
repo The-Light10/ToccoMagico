@@ -34,49 +34,13 @@
   a { color: var(--primary); text-decoration: none; }
   a:hover { color: var(--primary-light); }
 
-  /* ── SFONDO ANIMATO CONTINUO ── */
-  .bg-scroll {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    z-index: 0;
-    overflow: hidden;
-    opacity: 0.22;
-  }
-
-  .bg-scroll .col {
-    position: absolute;
-    top: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .bg-scroll .col .scroll-track {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    animation: cascadeDown linear infinite;
-  }
-
-  .bg-scroll .col .scroll-track img {
-    width: 100%;
-    border-radius: 6px;
-    display: block;
-  }
-
-  @keyframes cascadeDown {
-    0%   { transform: translateY(0); }
-    100% { transform: translateY(-50%); }
-  }
-
   /* ── HEADER ── */
   header {
     position: relative;
     z-index: 10;
     text-align: center;
     padding: 80px 20px 60px;
-    background: linear-gradient(180deg, rgba(10,10,10,0.97) 0%, rgba(10,10,10,0.6) 70%, transparent 100%);
+    background: var(--bg-dark);
   }
 
   .back-link {
@@ -113,10 +77,7 @@
     font-family: 'Playfair Display', serif;
     font-size: 3.6rem;
     letter-spacing: 3px;
-    background: linear-gradient(135deg, var(--primary-light), #f5deb3, var(--primary));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--primary-light);
     margin-bottom: 12px;
   }
 
@@ -321,20 +282,44 @@
   .lang-btn:hover { border-color: var(--primary); color: var(--primary); }
   .lang-btn.active { background: rgba(201,169,110,0.15); border-color: var(--primary); color: var(--primary); }
 
+  /* ── FOOTER ── */
+  .footer {
+    position: relative;
+    z-index: 10;
+    padding: 42px 20px 28px;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .footer p { color: var(--text-muted); font-size: 0.85rem; line-height: 1.6; overflow-wrap: anywhere; }
+  .footer-links,
+  .social-links { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 14px 22px; margin-top: 20px; }
+  .footer-links a { color: var(--text-muted); font-size: 0.82rem; }
+  .footer-links a:hover { color: var(--primary); }
+  .social-links { gap: 12px; }
+  .social-links a { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border: 1px solid rgba(255,255,255,0.12); border-radius: 50%; }
+  .social-links a:hover { border-color: var(--primary); }
+
   /* ── RESPONSIVE ── */
   @media (max-width: 768px) {
+    .footer { padding-left: 14px; padding-right: 14px; }
+    .footer-links { gap: 10px 16px; }
     header h1 { font-size: 2.2rem; }
     header { padding: 100px 20px 40px; }
     .card { flex-direction: column !important; padding: 16px; gap: 20px; }
     .card img { width: 100%; height: 180px; }
     .back-link { top: 16px; left: 16px; }
   }
+
+  @media (max-width: 420px) {
+    header p { letter-spacing: 2px; }
+    .grid-section { padding-left: 14px; padding-right: 14px; }
+    .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+    .grid img { height: 150px; }
+  }
 </style>
 </head>
 <body>
-
-<!-- SFONDO ANIMATO -->
-<div class="bg-scroll" id="bgScroll"></div>
 
 <!-- HEADER -->
 <header>
@@ -347,70 +332,6 @@
   <span class="section-divider"></span>
   <p data-i18n="gallery_subtitle">Tocco Magico Coiffure</p>
 </header>
-
-<!-- FOTO IN EVIDENZA -->
-<section class="featured">
-  <h2 class="section-title" data-i18n="gallery_featured_title">In Evidenza</h2>
-  <p class="section-subtitle" data-i18n="gallery_featured_desc">Una selezione delle nostre immagini preferite</p>
-
-  <div class="card">
-    <img src="IMG/tramonto-01.jpg" alt="Tramonto dorato">
-    <div class="card-text">
-      <h3 data-i18n="gallery_card1_title">Tramonto Dorato</h3>
-      <p data-i18n="gallery_card1_desc">Il cielo si accende di arancione e oro mentre il sole scende oltre l'orizzonte.
-         Un momento di pace assoluta, dove il tempo sembra fermarsi e il mondo
-         diventa un dipinto vivente.</p>
-    </div>
-  </div>
-
-  <div class="card-separator">
-    <span class="sep-line"></span>
-    <span class="sep-diamond"></span>
-    <span class="sep-line"></span>
-  </div>
-
-  <div class="card">
-    <img src="IMG/mare-azzurro-04.jpg" alt="Mare azzurro">
-    <div class="card-text">
-      <h3 data-i18n="gallery_card2_title">Mare Azzurro Infinito</h3>
-      <p data-i18n="gallery_card2_desc">L'acqua cristallina si fonde con il cielo in un infinito di blu.
-         Il rumore delle onde racconta storie antiche di vento e sale,
-         regalando una serenità che solo il mare sa dare.</p>
-    </div>
-  </div>
-
-  <div class="card-separator">
-    <span class="sep-line"></span>
-    <span class="sep-icon">~ ~ ~</span>
-    <span class="sep-line"></span>
-  </div>
-
-  <div class="card">
-    <img src="IMG/cielo-stellato-10.jpg" alt="Cielo stellato">
-    <div class="card-text">
-      <h3 data-i18n="gallery_card3_title">Cielo Stellato</h3>
-      <p data-i18n="gallery_card3_desc">Migliaia di stelle punteggiano il buio della notte come diamanti sparsi
-         su velluto nero. Ogni luce è un universo lontano, un promemoria
-         di quanto siamo piccoli e quanto sia immenso il cosmo.</p>
-    </div>
-  </div>
-
-  <div class="card-separator">
-    <span class="sep-line"></span>
-    <span class="sep-diamond"></span>
-    <span class="sep-line"></span>
-  </div>
-
-  <div class="card">
-    <img src="IMG/bosco-verde-08.jpg" alt="Bosco verde">
-    <div class="card-text">
-      <h3 data-i18n="gallery_card4_title">Nel Cuore del Bosco</h3>
-      <p data-i18n="gallery_card4_desc">I raggi di sole filtrano tra le fronde, creando danze di luce e ombra
-         sul sentiero. L'aria profuma di muschio e terra bagnata,
-         un rifugio naturale lontano dal rumore del mondo.</p>
-    </div>
-  </div>
-</section>
 
 <!-- GRIGLIA TUTTE LE FOTO -->
 <section class="grid-section">
@@ -430,7 +351,7 @@
   <div class="container">
     <p>Via Camminata 6, 6500 Bellinzona — +41 91 825 19 18 — +41 91 825 19 04</p>
     <div class="social-links">
-      <a href="https://wa.me/41918251918" target="_blank" rel="noopener" aria-label="WhatsApp">
+      <a hidden>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
       </a>
       <a href="https://www.facebook.com/toccomagicocoiffure" target="_blank" rel="noopener" aria-label="Facebook">
@@ -455,51 +376,15 @@
 
 <script>
   const photos = [
-    'IMG/tramonto-01.jpg', 'IMG/paesaggio-02.jpg', 'IMG/citta-notte-03.jpg',
-    'IMG/mare-azzurro-04.jpg', 'IMG/montagna-neve-05.jpg', 'IMG/fiore-rosa-06.jpg',
-    'IMG/strada-sera-07.jpg', 'IMG/bosco-verde-08.jpg', 'IMG/lago-chiaro-09.jpg',
-    'IMG/cielo-stellato-10.jpg', 'IMG/prato-sole-11.jpg', 'IMG/vecchio-ponte-12.jpg',
-    'IMG/architettura-13.jpg', 'IMG/giardino-segreto-14.jpg', 'IMG/barca-riposo-15.jpg',
-    'IMG/collina-dorata-16.jpg'
+    'https://dynl.mktgcdn.com/p/FhHhtbMGb0-uVaI-qkRZek_qgnRWczvoHkglqqKq4IE/319x398',
+    'https://dynl.mktgcdn.com/p/4TZwJCbxFZ0qA1I7cMRZ8Tw2Z-pxts2nR5E-XzLLUUE/319x398',
+    'https://dynl.mktgcdn.com/p/w5ENc8GAFLVdrybR_fSNjZErNFAuyawOXEDO6qcEbIg/319x398',
+    'https://dynl.mktgcdn.com/p/6UC7vVUQbmmdZF2CjWs6V4t_3s6GYu_rydhJOqB67To/319x398',
+    'https://dynl.mktgcdn.com/p/4D4pxnuZqrVSds1Gk0_4CukVOzRra25wMnx5yalaW6A/319x398',
+    'https://dynl.mktgcdn.com/p/5WipnbqepuqNqTnZLGFgwyig-pY-iYlsQey7joVyKLI/319x398',
+    'https://dynl.mktgcdn.com/p/6BA_gLi19OKudLqDduOBujXtLmHcENSmFAAsigG9oLE/319x398',
+    'https://dynl.mktgcdn.com/p/1bpkdj7XC5WW0QPNBIePoJnkQEjJDm9asFqRa3nDX-Y/319x398'
   ];
-
-  function buildBgScroll() {
-    const container = document.getElementById('bgScroll');
-    const numCols = 6;
-    const imgsPerSet = 10;
-
-    for (let c = 0; c < numCols; c++) {
-      const col = document.createElement('div');
-      col.className = 'col';
-      col.style.left = (c * (100 / numCols)) + '%';
-      col.style.width = (100 / numCols) + '%';
-
-      const track = document.createElement('div');
-      track.className = 'scroll-track';
-      track.style.animationDuration = (22 + Math.random() * 16) + 's';
-      track.style.animationDelay = (-Math.random() * 30) + 's';
-
-      const imgs = [];
-      for (let i = 0; i < imgsPerSet; i++) {
-        imgs.push(photos[Math.floor(Math.random() * photos.length)]);
-      }
-
-      imgs.forEach(src => {
-        const img = document.createElement('img');
-        img.src = src;
-        track.appendChild(img);
-      });
-
-      imgs.forEach(src => {
-        const img = document.createElement('img');
-        img.src = src;
-        track.appendChild(img);
-      });
-
-      col.appendChild(track);
-      container.appendChild(col);
-    }
-  }
 
   function buildGrid() {
     const grid = document.getElementById('grid');
@@ -522,7 +407,6 @@
     }
   });
 
-  buildBgScroll();
   buildGrid();
 </script>
 <script src="assets/js/lang.js"></script>
